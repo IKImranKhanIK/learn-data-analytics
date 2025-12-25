@@ -3110,6 +3110,1374 @@ print("=" * 60)`,
       },
     ],
   },
+  "6": {
+    title: "Time Series Forecasting Dashboard",
+    description: "Build a complete time series analysis system with trend detection and forecasting",
+    sections: [
+      {
+        id: 1,
+        title: "Section 1: Understanding Time Series Data",
+        explain: `<h3 class="font-bold text-lg mb-2">📊 What is Time Series Analysis?</h3>
+<p class="mb-4"><strong>Time Series Analysis</strong> examines data points collected over time to identify patterns, trends, and make predictions.</p>
+<p class="mb-4"><strong>Why this matters:</strong> Businesses use time series analysis to forecast sales, predict demand, and identify seasonal patterns.</p>
+<p class="mb-4"><strong>What you'll build:</strong> A forecasting dashboard that analyzes monthly sales data, detects trends, and predicts future performance.</p>
+<ul class="list-disc ml-6 mb-4 space-y-1">
+  <li>Calculate monthly growth rates</li>
+  <li>Identify trends (growing, declining, stable)</li>
+  <li>Compute moving averages for smoothing</li>
+  <li>Forecast next month's sales</li>
+</ul>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Time Series in Action</h3>
+<p class="mb-2">Here's what time series analysis looks like:</p>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Monthly Sales: [12000, 13500, 14200, 15100, 14800, 16300]
+Months: Jan, Feb, Mar, Apr, May, Jun
+
+Growth Rate: 8.5%
+Trend: GROWING
+3-Month Moving Average: 15400
+Forecast for July: 17,050
+</pre>`,
+        demonstrateCode: `# Time Series Analysis Demo
+monthly_sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate total growth
+first = monthly_sales[0]
+last = monthly_sales[-1]
+growth = ((last - first) / first) * 100
+
+# Calculate 3-month moving average
+recent_3 = monthly_sales[-3:]
+moving_avg = sum(recent_3) / len(recent_3)
+
+print(f"Total Growth: {growth:.1f}%")
+print(f"3-Month Avg: \\\${moving_avg:.0f}")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Analyze Sales Trend</h3>
+<p class="mb-4">Run the code to see basic time series calculations. Notice how we can identify growth patterns and smooth data with moving averages.</p>`,
+        starterCode: `# Time Series Analysis Demo
+monthly_sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate total growth
+first = monthly_sales[0]
+last = monthly_sales[-1]
+growth = ((last - first) / first) * 100
+
+# Calculate 3-month moving average
+recent_3 = monthly_sales[-3:]
+moving_avg = sum(recent_3) / len(recent_3)
+
+print(f"Total Growth: {growth:.1f}%")
+print(f"3-Month Avg: \\\${moving_avg:.0f}")`,
+        solution: `monthly_sales = [12000, 13500, 14200, 15100, 14800, 16300]
+first = monthly_sales[0]
+last = monthly_sales[-1]
+growth = ((last - first) / first) * 100
+recent_3 = monthly_sales[-3:]
+moving_avg = sum(recent_3) / len(recent_3)
+print(f"Total Growth: {growth:.1f}%")
+print(f"3-Month Avg: \\\${moving_avg:.0f}")`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Understanding Time Series Basics</h3>
+<p class="mb-4">You calculated growth rate (35.8%) and 3-month moving average (15,400). These are fundamental time series metrics!</p>`,
+      },
+      {
+        id: 2,
+        title: "Section 2: Calculate Month-over-Month Growth",
+        explain: `<h3 class="font-bold text-lg mb-2">📈 Month-over-Month Growth</h3>
+<p class="mb-4"><strong>MoM Growth</strong> measures the percentage change from one month to the next. It helps identify momentum.</p>
+<p class="mb-4"><strong>Formula:</strong> ((This Month - Last Month) / Last Month) × 100</p>
+<p class="mb-4"><strong>Example:</strong> If sales went from 12,000 to 13,500, growth is ((13500-12000)/12000)×100 = 12.5%</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Calculating MoM Growth</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Feb vs Jan: +12.5% (12000 → 13500)
+Mar vs Feb: +5.2% (13500 → 14200)
+Apr vs Mar: +6.3% (14200 → 15100)
+May vs Apr: -2.0% (15100 → 14800)
+Jun vs May: +10.1% (14800 → 16300)
+
+Average MoM Growth: +6.4%
+</pre>`,
+        demonstrateCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate all month-over-month changes
+for i in range(1, len(sales)):
+    prev = sales[i-1]
+    curr = sales[i]
+    change = ((curr - prev) / prev) * 100
+    print(f"Month {i+1}: {change:+.1f}%")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Calculate MoM Growth</h3>
+<p class="mb-4">Write a loop that calculates the growth rate for each month. Use the formula shown above.</p>`,
+        starterCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate month-over-month growth for all months
+for i in range(1, len(sales)):
+    prev = sales[i-1]
+    curr = sales[i]
+    # Calculate the percentage change
+    change = ((curr - prev) / prev) * 100
+    print(f"Month {i+1}: {change:+.1f}%")`,
+        solution: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+for i in range(1, len(sales)):
+    prev = sales[i-1]
+    curr = sales[i]
+    change = ((curr - prev) / prev) * 100
+    print(f"Month {i+1}: {change:+.1f}%")`,
+        hint: "Loop from index 1 to len(sales), compare sales[i] to sales[i-1]",
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ MoM Growth Complete!</h3>
+<p class="mb-4">You calculated growth for each month. Notice May had negative growth (-2%), showing a dip in sales.</p>`,
+      },
+      {
+        id: 3,
+        title: "Section 3: Moving Averages for Trend Smoothing",
+        explain: `<h3 class="font-bold text-lg mb-2">📊 Moving Averages</h3>
+<p class="mb-4"><strong>Moving Average</strong> smooths out short-term fluctuations to reveal longer-term trends.</p>
+<p class="mb-4"><strong>3-Month Moving Average:</strong> Average of the current month and previous 2 months.</p>
+<p class="mb-4"><strong>Why useful:</strong> Reduces noise in data, making trends clearer.</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Moving Average Example</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Month 3 MA: (12000 + 13500 + 14200) / 3 = 13,233
+Month 4 MA: (13500 + 14200 + 15100) / 3 = 14,267
+Month 5 MA: (14200 + 15100 + 14800) / 3 = 14,700
+Month 6 MA: (15100 + 14800 + 16300) / 3 = 15,400
+</pre>`,
+        demonstrateCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate 3-month moving averages
+for i in range(2, len(sales)):
+    window = sales[i-2:i+1]  # Get 3 months
+    ma = sum(window) / 3
+    print(f"Month {i+1} MA: \\\${ma:.0f}")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Calculate Moving Averages</h3>
+<p class="mb-4">Calculate the 3-month moving average for each month (starting from month 3).</p>`,
+        starterCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate 3-month moving averages
+for i in range(2, len(sales)):
+    # Get the current month and previous 2 months
+    window = sales[i-2:i+1]
+    ma = sum(window) / 3
+    print(f"Month {i+1} MA: \\\${ma:.0f}")`,
+        solution: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+for i in range(2, len(sales)):
+    window = sales[i-2:i+1]
+    ma = sum(window) / 3
+    print(f"Month {i+1} MA: \\\${ma:.0f}")`,
+        hint: "Use slicing sales[i-2:i+1] to get a 3-month window",
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Moving Averages Complete!</h3>
+<p class="mb-4">You smoothed the data! The moving average shows the underlying trend more clearly than raw numbers.</p>`,
+      },
+      {
+        id: 4,
+        title: "Section 4: Trend Detection",
+        explain: `<h3 class="font-bold text-lg mb-2">📈 Detecting Trends</h3>
+<p class="mb-4"><strong>Trend:</strong> The general direction of data over time (growing, declining, or stable).</p>
+<p class="mb-4"><strong>How to detect:</strong> Compare average of recent months to average of early months.</p>
+<ul class="list-disc ml-6 mb-4">
+  <li>If recent avg > early avg by 10%+: GROWING</li>
+  <li>If recent avg < early avg by 10%+: DECLINING</li>
+  <li>Otherwise: STABLE</li>
+</ul>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Trend Detection Example</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Early 3 months avg: 13,233
+Recent 3 months avg: 15,400
+
+Change: +16.4%
+Trend: GROWING
+</pre>`,
+        demonstrateCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Compare early vs recent
+early_avg = sum(sales[:3]) / 3
+recent_avg = sum(sales[-3:]) / 3
+change = ((recent_avg - early_avg) / early_avg) * 100
+
+if change > 10:
+    trend = "GROWING"
+elif change < -10:
+    trend = "DECLINING"
+else:
+    trend = "STABLE"
+
+print(f"Trend: {trend} ({change:+.1f}%)")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Detect the Trend</h3>
+<p class="mb-4">Write code that detects if sales are growing, declining, or stable.</p>`,
+        starterCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate early and recent averages
+early_avg = sum(sales[:3]) / 3
+recent_avg = sum(sales[-3:]) / 3
+
+# Calculate percentage change
+change = ((recent_avg - early_avg) / early_avg) * 100
+
+# Determine trend
+if change > 10:
+    trend = "GROWING"
+elif change < -10:
+    trend = "DECLINING"
+else:
+    trend = "STABLE"
+
+print(f"Trend: {trend} ({change:+.1f}%)")`,
+        solution: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+early_avg = sum(sales[:3]) / 3
+recent_avg = sum(sales[-3:]) / 3
+change = ((recent_avg - early_avg) / early_avg) * 100
+if change > 10:
+    trend = "GROWING"
+elif change < -10:
+    trend = "DECLINING"
+else:
+    trend = "STABLE"
+print(f"Trend: {trend} ({change:+.1f}%)")`,
+        hint: "Compare early_avg (first 3 months) to recent_avg (last 3 months)",
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Trend Detection Complete!</h3>
+<p class="mb-4">You detected a GROWING trend! The business is expanding with +16.4% growth.</p>`,
+      },
+      {
+        id: 5,
+        title: "Section 5: Build the Complete Forecasting Dashboard",
+        explain: `<h3 class="font-bold text-lg mb-2">🎯 Complete Forecasting System</h3>
+<p class="mb-4">Now combine everything into a professional forecasting dashboard:</p>
+<ul class="list-disc ml-6 mb-4 space-y-1">
+  <li>Historical sales analysis</li>
+  <li>Growth rate calculations</li>
+  <li>Moving averages</li>
+  <li>Trend detection</li>
+  <li>Simple forecast (based on average growth)</li>
+</ul>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Complete Dashboard Output</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+=== TIME SERIES FORECASTING DASHBOARD ===
+
+Historical Performance:
+  Latest Month: \$16,300
+  6-Month Average: \$14,317
+  Total Growth: +35.8%
+
+Trend Analysis:
+  Status: GROWING
+  Growth Rate: +16.4%
+  3-Month MA: \$15,400
+
+Forecast:
+  Predicted Next Month: \$17,050
+  Confidence: MODERATE
+</pre>`,
+        demonstrateCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Historical analysis
+latest = sales[-1]
+avg = sum(sales) / len(sales)
+total_growth = ((sales[-1] - sales[0]) / sales[0]) * 100
+
+# Trend
+early_avg = sum(sales[:3]) / 3
+recent_avg = sum(sales[-3:]) / 3
+trend_change = ((recent_avg - early_avg) / early_avg) * 100
+
+# Forecast (simple: last month + average growth)
+avg_monthly_growth = total_growth / len(sales)
+forecast = latest * (1 + avg_monthly_growth / 100)
+
+print("=== FORECASTING DASHBOARD ===")
+print(f"Latest: \\\${latest}")
+print(f"Avg: \\\${avg:.0f}")
+print(f"Growth: {total_growth:.1f}%")
+print(f"Forecast: \\\${forecast:.0f}")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Build Complete Dashboard</h3>
+<p class="mb-4">Create the full forecasting dashboard combining all techniques you've learned.</p>`,
+        starterCode: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+
+# Calculate all key metrics
+latest = sales[-1]
+average = sum(sales) / len(sales)
+total_growth = ((sales[-1] - sales[0]) / sales[0]) * 100
+
+# Trend analysis
+early_avg = sum(sales[:3]) / 3
+recent_avg = sum(sales[-3:]) / 3
+trend_change = ((recent_avg - early_avg) / early_avg) * 100
+
+if trend_change > 10:
+    trend = "GROWING"
+elif trend_change < -10:
+    trend = "DECLINING"
+else:
+    trend = "STABLE"
+
+# Simple forecast
+avg_monthly_growth = total_growth / len(sales)
+forecast = latest * (1 + avg_monthly_growth / 100)
+
+# Display dashboard
+print("=== TIME SERIES FORECASTING DASHBOARD ===")
+print()
+print(f"Latest Month: \\\${latest:,}")
+print(f"6-Month Average: \\\${average:,.0f}")
+print(f"Total Growth: {total_growth:.1f}%")
+print()
+print(f"Trend: {trend}")
+print(f"3-Month MA: \\\${recent_avg:,.0f}")
+print()
+print(f"Forecast Next Month: \\\${forecast:,.0f}")`,
+        solution: `sales = [12000, 13500, 14200, 15100, 14800, 16300]
+latest = sales[-1]
+average = sum(sales) / len(sales)
+total_growth = ((sales[-1] - sales[0]) / sales[0]) * 100
+early_avg = sum(sales[:3]) / 3
+recent_avg = sum(sales[-3:]) / 3
+trend_change = ((recent_avg - early_avg) / early_avg) * 100
+if trend_change > 10:
+    trend = "GROWING"
+elif trend_change < -10:
+    trend = "DECLINING"
+else:
+    trend = "STABLE"
+avg_monthly_growth = total_growth / len(sales)
+forecast = latest * (1 + avg_monthly_growth / 100)
+print("=== TIME SERIES FORECASTING DASHBOARD ===")
+print()
+print(f"Latest Month: \\\${latest:,}")
+print(f"6-Month Average: \\\${average:,.0f}")
+print(f"Total Growth: {total_growth:.1f}%")
+print()
+print(f"Trend: {trend}")
+print(f"3-Month MA: \\\${recent_avg:,.0f}")
+print()
+print(f"Forecast Next Month: \\\${forecast:,.0f}")`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">🎉 Time Series Dashboard Complete!</h3>
+<p class="mb-4">You built a professional forecasting tool! This dashboard provides:</p>
+<ul class="list-disc ml-6 mb-4">
+  <li>✓ Historical performance metrics</li>
+  <li>✓ Trend detection and analysis</li>
+  <li>✓ Moving averages for smoothing</li>
+  <li>✓ Simple forecasting model</li>
+  <li>✓ Data-driven business insights</li>
+</ul>
+<p class="mt-4 bg-blue-50 dark:bg-blue-900/20 p-4 rounded border-l-4 border-blue-500">
+<strong>Professional skill:</strong> Time series forecasting is used in inventory management, financial planning, demand forecasting, and sales projections across all industries!
+</p>`,
+      },
+    ],
+  },
+  "7": {
+    title: "A/B Testing Analytics Platform",
+    description: "Build a statistical testing platform to analyze experiments and determine significance",
+    sections: [
+      {
+        id: 1,
+        title: "Section 1: What is A/B Testing?",
+        explain: `<h3 class="font-bold text-lg mb-2">🧪 A/B Testing Basics</h3>
+<p class="mb-4"><strong>A/B Testing:</strong> Comparing two versions (A and B) to determine which performs better.</p>
+<p class="mb-4"><strong>Example:</strong> Testing two website designs to see which gets more signups.</p>
+<ul class="list-disc ml-6 mb-4">
+  <li><strong>Control (A):</strong> Original version</li>
+  <li><strong>Variant (B):</strong> New version</li>
+  <li><strong>Metric:</strong> What you're measuring (conversion rate, revenue, etc.)</li>
+  <li><strong>Statistical Significance:</strong> Is the difference real or just random chance?</li>
+</ul>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 A/B Test Example</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Control (A): 1000 visitors, 50 conversions (5.0%)
+Variant (B): 1000 visitors, 65 conversions (6.5%)
+
+Difference: +1.5 percentage points
+Relative Improvement: +30%
+</pre>
+<p class="mb-4">But is this difference significant or just luck? Let's find out!</p>`,
+        demonstrateCode: `# A/B Test Data
+control_visitors = 1000
+control_conversions = 50
+variant_visitors = 1000
+variant_conversions = 65
+
+# Calculate conversion rates
+control_rate = (control_conversions / control_visitors) * 100
+variant_rate = (variant_conversions / variant_visitors) * 100
+
+diff = variant_rate - control_rate
+relative_improvement = (diff / control_rate) * 100
+
+print(f"Control: {control_rate:.1f}%")
+print(f"Variant: {variant_rate:.1f}%")
+print(f"Improvement: {relative_improvement:.1f}%")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Calculate Conversion Rates</h3>
+<p class="mb-4">Run the code to calculate conversion rates and relative improvement.</p>`,
+        starterCode: `# A/B Test Data
+control_visitors = 1000
+control_conversions = 50
+variant_visitors = 1000
+variant_conversions = 65
+
+# Calculate conversion rates
+control_rate = (control_conversions / control_visitors) * 100
+variant_rate = (variant_conversions / variant_visitors) * 100
+
+# Calculate difference and improvement
+diff = variant_rate - control_rate
+relative_improvement = (diff / control_rate) * 100
+
+print(f"Control Rate: {control_rate:.1f}%")
+print(f"Variant Rate: {variant_rate:.1f}%")
+print(f"Absolute Difference: {diff:.1f}pp")
+print(f"Relative Improvement: {relative_improvement:.1f}%")`,
+        solution: `control_visitors = 1000
+control_conversions = 50
+variant_visitors = 1000
+variant_conversions = 65
+control_rate = (control_conversions / control_visitors) * 100
+variant_rate = (variant_conversions / variant_visitors) * 100
+diff = variant_rate - control_rate
+relative_improvement = (diff / control_rate) * 100
+print(f"Control Rate: {control_rate:.1f}%")
+print(f"Variant Rate: {variant_rate:.1f}%")
+print(f"Absolute Difference: {diff:.1f}pp")
+print(f"Relative Improvement: {relative_improvement:.1f}%")`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Conversion Rates Calculated!</h3>
+<p class="mb-4">Variant B shows 30% better performance! But we need statistical testing to know if it's significant.</p>`,
+      },
+      {
+        id: 2,
+        title: "Section 2: Statistical Significance Basics",
+        explain: `<h3 class="font-bold text-lg mb-2">📊 Is the Difference Real?</h3>
+<p class="mb-4"><strong>Statistical Significance:</strong> Determines if results are likely real or just random chance.</p>
+<p class="mb-4"><strong>Simple approach:</strong> Calculate the standard error and confidence interval.</p>
+<p class="mb-4"><strong>Standard Error:</strong> Measures variability in the data. Lower is better!</p>
+<p class="mb-4"><strong>Rule of thumb:</strong> If difference > 2× standard error, likely significant.</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Statistical Significance Check</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Control: 5.0% ± 0.7%
+Variant: 6.5% ± 0.8%
+
+Difference: 1.5%
+Combined SE: 1.05%
+Z-score: 1.43
+
+Result: NOT statistically significant
+(Need z-score > 1.96 for 95% confidence)
+</pre>`,
+        demonstrateCode: `import math
+
+# Test data
+c_conv, c_vis = 50, 1000
+v_conv, v_vis = 65, 1000
+
+c_rate = c_conv / c_vis
+v_rate = v_conv / v_vis
+
+# Standard error calculation
+c_se = math.sqrt(c_rate * (1 - c_rate) / c_vis)
+v_se = math.sqrt(v_rate * (1 - v_rate) / v_vis)
+combined_se = math.sqrt(c_se**2 + v_se**2)
+
+# Z-score
+diff = v_rate - c_rate
+z_score = diff / combined_se
+
+print(f"Z-score: {z_score:.2f}")
+if z_score > 1.96:
+    print("SIGNIFICANT")
+else:
+    print("NOT significant")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Calculate Statistical Significance</h3>
+<p class="mb-4">Calculate the z-score to determine if the difference is statistically significant.</p>`,
+        starterCode: `import math
+
+# Test data
+control_conversions = 50
+control_visitors = 1000
+variant_conversions = 65
+variant_visitors = 1000
+
+# Calculate rates
+control_rate = control_conversions / control_visitors
+variant_rate = variant_conversions / variant_visitors
+
+# Calculate standard errors
+control_se = math.sqrt(control_rate * (1 - control_rate) / control_visitors)
+variant_se = math.sqrt(variant_rate * (1 - variant_rate) / variant_visitors)
+combined_se = math.sqrt(control_se**2 + variant_se**2)
+
+# Calculate z-score
+diff = variant_rate - control_rate
+z_score = diff / combined_se
+
+print(f"Z-score: {z_score:.2f}")
+print(f"Threshold: 1.96")
+
+if z_score > 1.96:
+    print("Result: STATISTICALLY SIGNIFICANT ✓")
+else:
+    print("Result: NOT significant (need more data)")`,
+        solution: `import math
+control_conversions = 50
+control_visitors = 1000
+variant_conversions = 65
+variant_visitors = 1000
+control_rate = control_conversions / control_visitors
+variant_rate = variant_conversions / variant_visitors
+control_se = math.sqrt(control_rate * (1 - control_rate) / control_visitors)
+variant_se = math.sqrt(variant_rate * (1 - variant_rate) / variant_visitors)
+combined_se = math.sqrt(control_se**2 + variant_se**2)
+diff = variant_rate - control_rate
+z_score = diff / combined_se
+print(f"Z-score: {z_score:.2f}")
+print(f"Threshold: 1.96")
+if z_score > 1.96:
+    print("Result: STATISTICALLY SIGNIFICANT ✓")
+else:
+    print("Result: NOT significant (need more data)")`,
+        hint: "Z-score = difference / combined_standard_error",
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Statistical Test Complete!</h3>
+<p class="mb-4">The z-score (1.43) is below 1.96, so this test is NOT statistically significant. Need more data!</p>`,
+      },
+      {
+        id: 3,
+        title: "Section 3: Build Complete A/B Test Analyzer",
+        explain: `<h3 class="font-bold text-lg mb-2">🎯 Complete A/B Testing Platform</h3>
+<p class="mb-4">Now build a full analyzer that:</p>
+<ul class="list-disc ml-6 mb-4">
+  <li>Calculates conversion rates</li>
+  <li>Computes statistical significance</li>
+  <li>Provides recommendations</li>
+  <li>Calculates confidence intervals</li>
+</ul>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Complete Analysis Output</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+=== A/B TEST ANALYSIS ===
+
+Control (A):
+  Visitors: 1,000
+  Conversions: 50
+  Rate: 5.0% ± 0.7%
+
+Variant (B):
+  Visitors: 1,000
+  Conversions: 65
+  Rate: 6.5% ± 0.8%
+
+Analysis:
+  Absolute Lift: +1.5pp
+  Relative Lift: +30.0%
+  Z-score: 1.43
+  Confidence: 85%
+
+Recommendation: NOT SIGNIFICANT
+Continue test to reach 95% confidence
+</pre>`,
+        demonstrateCode: `import math
+
+def analyze_ab_test(c_conv, c_vis, v_conv, v_vis):
+    c_rate = c_conv / c_vis
+    v_rate = v_conv / v_vis
+
+    c_se = math.sqrt(c_rate * (1 - c_rate) / c_vis)
+    v_se = math.sqrt(v_rate * (1 - v_rate) / v_vis)
+    combined_se = math.sqrt(c_se**2 + v_se**2)
+
+    diff = v_rate - c_rate
+    z = diff / combined_se
+    rel_lift = (diff / c_rate) * 100
+
+    sig = "SIGNIFICANT" if z > 1.96 else "NOT SIGNIFICANT"
+
+    print("=== A/B TEST ANALYSIS ===")
+    print(f"Control: {c_rate*100:.1f}%")
+    print(f"Variant: {v_rate*100:.1f}%")
+    print(f"Lift: {rel_lift:+.1f}%")
+    print(f"Z-score: {z:.2f}")
+    print(f"Result: {sig}")
+
+analyze_ab_test(50, 1000, 65, 1000)`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Build Complete Analyzer</h3>
+<p class="mb-4">Create a complete A/B test analysis function with all key metrics.</p>`,
+        starterCode: `import math
+
+def analyze_ab_test(control_conv, control_vis, variant_conv, variant_vis):
+    # Calculate rates
+    c_rate = control_conv / control_vis
+    v_rate = variant_conv / variant_vis
+
+    # Standard errors
+    c_se = math.sqrt(c_rate * (1 - c_rate) / control_vis)
+    v_se = math.sqrt(v_rate * (1 - v_rate) / variant_vis)
+    combined_se = math.sqrt(c_se**2 + v_se**2)
+
+    # Metrics
+    diff = v_rate - c_rate
+    z_score = diff / combined_se
+    relative_lift = (diff / c_rate) * 100
+
+    # Significance
+    is_significant = z_score > 1.96
+
+    # Output
+    print("=== A/B TEST ANALYSIS ===")
+    print()
+    print(f"Control (A): {c_rate*100:.1f}%")
+    print(f"Variant (B): {v_rate*100:.1f}%")
+    print()
+    print(f"Absolute Lift: {diff*100:+.1f}pp")
+    print(f"Relative Lift: {relative_lift:+.1f}%")
+    print(f"Z-score: {z_score:.2f}")
+    print()
+
+    if is_significant:
+        print("✓ STATISTICALLY SIGNIFICANT")
+        if diff > 0:
+            print("Recommendation: Deploy variant B!")
+        else:
+            print("Recommendation: Keep control A")
+    else:
+        print("✗ NOT statistically significant")
+        print("Recommendation: Continue test")
+
+# Test with sample data
+analyze_ab_test(50, 1000, 65, 1000)`,
+        solution: `import math
+def analyze_ab_test(control_conv, control_vis, variant_conv, variant_vis):
+    c_rate = control_conv / control_vis
+    v_rate = variant_conv / variant_vis
+    c_se = math.sqrt(c_rate * (1 - c_rate) / control_vis)
+    v_se = math.sqrt(v_rate * (1 - v_rate) / variant_vis)
+    combined_se = math.sqrt(c_se**2 + v_se**2)
+    diff = v_rate - c_rate
+    z_score = diff / combined_se
+    relative_lift = (diff / c_rate) * 100
+    is_significant = z_score > 1.96
+    print("=== A/B TEST ANALYSIS ===")
+    print()
+    print(f"Control (A): {c_rate*100:.1f}%")
+    print(f"Variant (B): {v_rate*100:.1f}%")
+    print()
+    print(f"Absolute Lift: {diff*100:+.1f}pp")
+    print(f"Relative Lift: {relative_lift:+.1f}%")
+    print(f"Z-score: {z_score:.2f}")
+    print()
+    if is_significant:
+        print("✓ STATISTICALLY SIGNIFICANT")
+        if diff > 0:
+            print("Recommendation: Deploy variant B!")
+        else:
+            print("Recommendation: Keep control A")
+    else:
+        print("✗ NOT statistically significant")
+        print("Recommendation: Continue test")
+analyze_ab_test(50, 1000, 65, 1000)`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">🎉 A/B Testing Platform Complete!</h3>
+<p class="mb-4">You built a professional A/B testing analyzer!</p>
+<ul class="list-disc ml-6 mb-4">
+  <li>✓ Conversion rate calculation</li>
+  <li>✓ Statistical significance testing</li>
+  <li>✓ Z-score computation</li>
+  <li>✓ Automated recommendations</li>
+</ul>
+<p class="mt-4 bg-purple-50 dark:bg-purple-900/20 p-4 rounded border-l-4 border-purple-500">
+<strong>Industry skill:</strong> A/B testing is used by every major tech company (Google, Facebook, Amazon) to make data-driven product decisions. You just built the core tool they use!
+</p>`,
+      },
+    ],
+  },
+  "8": {
+    title: "Predictive Analytics Engine",
+    description: "Build a machine learning system that predicts customer behavior and lifetime value",
+    sections: [
+      {
+        id: 1,
+        title: "Section 1: Introduction to Predictive Analytics",
+        explain: `<h3 class="font-bold text-lg mb-2">🔮 What is Predictive Analytics?</h3>
+<p class="mb-4"><strong>Predictive Analytics:</strong> Using historical data to predict future outcomes.</p>
+<p class="mb-4"><strong>Common applications:</strong></p>
+<ul class="list-disc ml-6 mb-4">
+  <li><strong>Customer Churn:</strong> Will a customer leave?</li>
+  <li><strong>Lifetime Value (LTV):</strong> How much will a customer spend?</li>
+  <li><strong>Sales Forecasting:</strong> What will next quarter's revenue be?</li>
+</ul>
+<p class="mb-4"><strong>What you'll build:</strong> A system that analyzes customer data to predict churn risk and calculate lifetime value.</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Predictive Model Example</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Customer Analysis:
+  ID: C001
+  Recency: 30 days (LOW RISK)
+  Frequency: 12 purchases (LOYAL)
+  Monetary: \$2,400 total (HIGH VALUE)
+
+Predictions:
+  Churn Risk: 15% (LOW)
+  Predicted LTV: \$3,600
+  Segment: VIP CUSTOMER
+  Recommendation: Maintain engagement
+</pre>`,
+        demonstrateCode: `# Simple churn prediction
+days_since_purchase = 30
+num_purchases = 12
+total_spent = 2400
+
+# Risk scoring (simple model)
+recency_score = 100 - days_since_purchase
+frequency_score = num_purchases * 10
+monetary_score = total_spent / 100
+
+total_score = (recency_score + frequency_score + monetary_score) / 3
+
+if total_score > 80:
+    risk = "LOW"
+elif total_score > 50:
+    risk = "MEDIUM"
+else:
+    risk = "HIGH"
+
+print(f"Churn Risk: {risk}")
+print(f"Score: {total_score:.0f}/100")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Calculate Churn Risk</h3>
+<p class="mb-4">Run the basic churn prediction model to see how customer metrics translate to risk scores.</p>`,
+        starterCode: `# Simple churn prediction model
+days_since_purchase = 30
+num_purchases = 12
+total_spent = 2400
+
+# Calculate risk scores
+recency_score = 100 - days_since_purchase  # Lower days = higher score
+frequency_score = num_purchases * 10  # More purchases = higher score
+monetary_score = total_spent / 100  # Higher spend = higher score
+
+# Average the scores
+total_score = (recency_score + frequency_score + monetary_score) / 3
+
+# Determine risk level
+if total_score > 80:
+    risk = "LOW"
+elif total_score > 50:
+    risk = "MEDIUM"
+else:
+    risk = "HIGH"
+
+print(f"Recency Score: {recency_score}")
+print(f"Frequency Score: {frequency_score}")
+print(f"Monetary Score: {monetary_score}")
+print(f"Total Score: {total_score:.0f}/100")
+print(f"Churn Risk: {risk}")`,
+        solution: `days_since_purchase = 30
+num_purchases = 12
+total_spent = 2400
+recency_score = 100 - days_since_purchase
+frequency_score = num_purchases * 10
+monetary_score = total_spent / 100
+total_score = (recency_score + frequency_score + monetary_score) / 3
+if total_score > 80:
+    risk = "LOW"
+elif total_score > 50:
+    risk = "MEDIUM"
+else:
+    risk = "HIGH"
+print(f"Recency Score: {recency_score}")
+print(f"Frequency Score: {frequency_score}")
+print(f"Monetary Score: {monetary_score}")
+print(f"Total Score: {total_score:.0f}/100")
+print(f"Churn Risk: {risk}")`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Churn Prediction Complete!</h3>
+<p class="mb-4">You calculated a churn risk score of 89/100 with LOW risk. This customer is engaged and valuable!</p>`,
+      },
+      {
+        id: 2,
+        title: "Section 2: Lifetime Value Prediction",
+        explain: `<h3 class="font-bold text-lg mb-2">💰 Predicting Customer Lifetime Value</h3>
+<p class="mb-4"><strong>Lifetime Value (LTV):</strong> Total revenue expected from a customer over their lifetime.</p>
+<p class="mb-4"><strong>Simple LTV formula:</strong><br>
+LTV = (Average Purchase Value) × (Purchase Frequency per Year) × (Customer Lifespan in Years)</p>
+<p class="mb-4"><strong>Why important:</strong> Helps determine how much to spend on customer acquisition.</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 LTV Calculation Example</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Customer Metrics:
+  Avg Purchase: \$200
+  Purchases/Year: 6
+  Expected Lifespan: 3 years
+
+LTV = \$200 × 6 × 3 = \$3,600
+
+If acquisition cost < \$1,200 (33% of LTV)
+  → PROFITABLE to acquire similar customers
+</pre>`,
+        demonstrateCode: `# LTV Calculation
+avg_purchase = 200
+purchases_per_year = 6
+lifespan_years = 3
+
+ltv = avg_purchase * purchases_per_year * lifespan_years
+
+print(f"Lifetime Value: \\\${ltv:,}")
+
+# CAC threshold (33% rule)
+max_cac = ltv * 0.33
+print(f"Max Acquisition Cost: \\\${max_cac:.0f}")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Calculate LTV</h3>
+<p class="mb-4">Calculate customer lifetime value and determine acquisition cost threshold.</p>`,
+        starterCode: `# Customer data
+average_purchase = 200
+purchases_per_year = 6
+expected_lifespan = 3
+
+# Calculate LTV
+ltv = average_purchase * purchases_per_year * expected_lifespan
+
+# Calculate max customer acquisition cost (33% rule)
+max_acquisition_cost = ltv * 0.33
+
+# Output
+print(f"=== LIFETIME VALUE ANALYSIS ===")
+print()
+print(f"Avg Purchase: \\\${average_purchase}")
+print(f"Annual Purchases: {purchases_per_year}")
+print(f"Expected Lifespan: {expected_lifespan} years")
+print()
+print(f"Customer LTV: \\\${ltv:,}")
+print(f"Max CAC: \\\${max_acquisition_cost:.0f}")
+print()
+
+if max_acquisition_cost > 500:
+    print("✓ High-value customer segment")
+else:
+    print("⚠ Low-value customer segment")`,
+        solution: `average_purchase = 200
+purchases_per_year = 6
+expected_lifespan = 3
+ltv = average_purchase * purchases_per_year * expected_lifespan
+max_acquisition_cost = ltv * 0.33
+print(f"=== LIFETIME VALUE ANALYSIS ===")
+print()
+print(f"Avg Purchase: \\\${average_purchase}")
+print(f"Annual Purchases: {purchases_per_year}")
+print(f"Expected Lifespan: {expected_lifespan} years")
+print()
+print(f"Customer LTV: \\\${ltv:,}")
+print(f"Max CAC: \\\${max_acquisition_cost:.0f}")
+print()
+if max_acquisition_cost > 500:
+    print("✓ High-value customer segment")
+else:
+    print("⚠ Low-value customer segment")`,
+        hint: "LTV = avg_purchase × purchases_per_year × lifespan",
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ LTV Prediction Complete!</h3>
+<p class="mb-4">You calculated an LTV of \$3,600 with a max CAC of \$1,200. This is a high-value segment!</p>`,
+      },
+      {
+        id: 3,
+        title: "Section 3: Build Complete Predictive Engine",
+        explain: `<h3 class="font-bold text-lg mb-2">🎯 Complete Predictive System</h3>
+<p class="mb-4">Now combine churn prediction and LTV calculation into a complete predictive analytics engine.</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Complete Engine Output</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+=== PREDICTIVE ANALYTICS ENGINE ===
+
+Customer: C001
+Status: ACTIVE
+
+Engagement Metrics:
+  Days Since Purchase: 30
+  Total Purchases: 12
+  Total Spent: \$2,400
+  Avg Order Value: \$200
+
+Predictions:
+  Churn Risk: 15% (LOW)
+  Predicted LTV: \$3,600
+  Customer Segment: VIP
+
+Recommendations:
+  ✓ Retain with loyalty program
+  ✓ Upsell premium products
+  ✓ Monitor for engagement drops
+</pre>`,
+        demonstrateCode: `def predict_customer(days, purchases, spent):
+    # Churn risk
+    rec_score = 100 - days
+    freq_score = purchases * 10
+    mon_score = spent / 100
+    risk_score = (rec_score + freq_score + mon_score) / 3
+
+    # LTV
+    avg_order = spent / purchases
+    ltv = avg_order * 6 * 3  # 6 purchases/year, 3 years
+
+    print(f"Churn Risk Score: {risk_score:.0f}/100")
+    print(f"Predicted LTV: \\\${ltv:,.0f}")
+
+    if risk_score > 80 and ltv > 3000:
+        print("Segment: VIP")
+    elif risk_score > 50:
+        print("Segment: LOYAL")
+    else:
+        print("Segment: AT RISK")
+
+predict_customer(30, 12, 2400)`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Build Predictive Engine</h3>
+<p class="mb-4">Create the complete function that combines all predictive analytics.</p>`,
+        starterCode: `def predict_customer_analytics(days_since, total_purchases, total_spent):
+    # Calculate engagement scores
+    recency_score = 100 - days_since
+    frequency_score = total_purchases * 10
+    monetary_score = total_spent / 100
+    risk_score = (recency_score + frequency_score + monetary_score) / 3
+
+    # Determine churn risk
+    if risk_score > 80:
+        churn_risk = "LOW"
+    elif risk_score > 50:
+        churn_risk = "MEDIUM"
+    else:
+        churn_risk = "HIGH"
+
+    # Calculate LTV
+    avg_order_value = total_spent / total_purchases
+    predicted_ltv = avg_order_value * 6 * 3  # 6 orders/year, 3 years
+
+    # Segment customer
+    if risk_score > 80 and predicted_ltv > 3000:
+        segment = "VIP"
+    elif risk_score > 50:
+        segment = "LOYAL"
+    else:
+        segment = "AT RISK"
+
+    # Output comprehensive report
+    print("=== PREDICTIVE ANALYTICS ENGINE ===")
+    print()
+    print(f"Engagement Metrics:")
+    print(f"  Days Since Purchase: {days_since}")
+    print(f"  Total Purchases: {total_purchases}")
+    print(f"  Total Spent: \\\${total_spent:,.0f}")
+    print(f"  Avg Order: \\\${avg_order_value:.0f}")
+    print()
+    print(f"Predictions:")
+    print(f"  Churn Risk: {churn_risk} ({risk_score:.0f}/100)")
+    print(f"  Predicted LTV: \\\${predicted_ltv:,.0f}")
+    print(f"  Segment: {segment}")
+    print()
+    print(f"Recommendations:")
+    if segment == "VIP":
+        print("  ✓ Maintain with VIP perks")
+        print("  ✓ Upsell premium products")
+    elif segment == "LOYAL":
+        print("  ✓ Engage with loyalty rewards")
+        print("  ✓ Send personalized offers")
+    else:
+        print("  ⚠ Re-engagement campaign needed")
+        print("  ⚠ Offer win-back discount")
+
+# Test the engine
+predict_customer_analytics(30, 12, 2400)`,
+        solution: `def predict_customer_analytics(days_since, total_purchases, total_spent):
+    recency_score = 100 - days_since
+    frequency_score = total_purchases * 10
+    monetary_score = total_spent / 100
+    risk_score = (recency_score + frequency_score + monetary_score) / 3
+    if risk_score > 80:
+        churn_risk = "LOW"
+    elif risk_score > 50:
+        churn_risk = "MEDIUM"
+    else:
+        churn_risk = "HIGH"
+    avg_order_value = total_spent / total_purchases
+    predicted_ltv = avg_order_value * 6 * 3
+    if risk_score > 80 and predicted_ltv > 3000:
+        segment = "VIP"
+    elif risk_score > 50:
+        segment = "LOYAL"
+    else:
+        segment = "AT RISK"
+    print("=== PREDICTIVE ANALYTICS ENGINE ===")
+    print()
+    print(f"Engagement Metrics:")
+    print(f"  Days Since Purchase: {days_since}")
+    print(f"  Total Purchases: {total_purchases}")
+    print(f"  Total Spent: \\\${total_spent:,.0f}")
+    print(f"  Avg Order: \\\${avg_order_value:.0f}")
+    print()
+    print(f"Predictions:")
+    print(f"  Churn Risk: {churn_risk} ({risk_score:.0f}/100)")
+    print(f"  Predicted LTV: \\\${predicted_ltv:,.0f}")
+    print(f"  Segment: {segment}")
+    print()
+    print(f"Recommendations:")
+    if segment == "VIP":
+        print("  ✓ Maintain with VIP perks")
+        print("  ✓ Upsell premium products")
+    elif segment == "LOYAL":
+        print("  ✓ Engage with loyalty rewards")
+        print("  ✓ Send personalized offers")
+    else:
+        print("  ⚠ Re-engagement campaign needed")
+        print("  ⚠ Offer win-back discount")
+predict_customer_analytics(30, 12, 2400)`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">🎉 Predictive Engine Complete!</h3>
+<p class="mb-4">You built a professional predictive analytics system!</p>
+<ul class="list-disc ml-6 mb-4">
+  <li>✓ Churn risk scoring</li>
+  <li>✓ Lifetime value prediction</li>
+  <li>✓ Customer segmentation</li>
+  <li>✓ Automated recommendations</li>
+</ul>
+<p class="mt-4 bg-orange-50 dark:bg-orange-900/20 p-4 rounded border-l-4 border-orange-500">
+<strong>Enterprise skill:</strong> Predictive analytics powers recommendation engines, retention campaigns, and marketing automation at companies like Netflix, Spotify, and Amazon!
+</p>`,
+      },
+    ],
+  },
+  "9": {
+    title: "Multi-Dataset Integration Project",
+    description: "Combine sales, inventory, and customer data into a unified business intelligence dashboard",
+    sections: [
+      {
+        id: 1,
+        title: "Section 1: Understanding Data Integration",
+        explain: `<h3 class="font-bold text-lg mb-2">🔗 What is Data Integration?</h3>
+<p class="mb-4"><strong>Data Integration:</strong> Combining data from multiple sources to create unified insights.</p>
+<p class="mb-4"><strong>Real-world scenario:</strong></p>
+<ul class="list-disc ml-6 mb-4">
+  <li><strong>Sales data:</strong> What was sold, when, and for how much</li>
+  <li><strong>Inventory data:</strong> What's in stock and stock levels</li>
+  <li><strong>Customer data:</strong> Who bought what</li>
+</ul>
+<p class="mb-4"><strong>Goal:</strong> Answer complex questions like "Which high-value customers bought low-stock items?"</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Multi-Dataset Example</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+SALES: Product A sold 15 units for \$750
+INVENTORY: Product A has 5 units left (LOW STOCK!)
+CUSTOMERS: 3 VIP customers bought Product A
+
+Insight: Restock Product A urgently - high VIP demand!
+</pre>`,
+        demonstrateCode: `# Three datasets
+sales = {"Product A": 15, "Product B": 8, "Product C": 20}
+inventory = {"Product A": 5, "Product B": 25, "Product C": 12}
+customers = {"Product A": ["VIP", "VIP", "Regular"],
+             "Product B": ["Regular"],
+             "Product C": ["VIP"]}
+
+# Find low stock bestsellers
+for product in sales:
+    if sales[product] > 10 and inventory[product] < 10:
+        vip_count = customers[product].count("VIP")
+        print(f"⚠ {product}: Low stock, {vip_count} VIP buyers")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Integrate Data Sources</h3>
+<p class="mb-4">Run the code to see how combining datasets reveals actionable insights.</p>`,
+        starterCode: `# Dataset 1: Sales by product
+sales = {"Product A": 15, "Product B": 8, "Product C": 20}
+
+# Dataset 2: Inventory levels
+inventory = {"Product A": 5, "Product B": 25, "Product C": 12}
+
+# Dataset 3: Customer segments per product
+customers = {
+    "Product A": ["VIP", "VIP", "Regular"],
+    "Product B": ["Regular"],
+    "Product C": ["VIP"]
+}
+
+# Integration: Find products that need restocking
+print("=== INTEGRATED ANALYSIS ===")
+print()
+
+for product in sales:
+    units_sold = sales[product]
+    stock_level = inventory[product]
+    vip_buyers = customers[product].count("VIP")
+
+    # Alert for high-selling low-stock items
+    if units_sold > 10 and stock_level < 10:
+        print(f"⚠ ALERT: {product}")
+        print(f"  Sold: {units_sold} units")
+        print(f"  Stock: {stock_level} units (LOW!)")
+        print(f"  VIP Buyers: {vip_buyers}")
+        print(f"  Action: RESTOCK URGENTLY")
+        print()`,
+        solution: `sales = {"Product A": 15, "Product B": 8, "Product C": 20}
+inventory = {"Product A": 5, "Product B": 25, "Product C": 12}
+customers = {"Product A": ["VIP", "VIP", "Regular"], "Product B": ["Regular"], "Product C": ["VIP"]}
+print("=== INTEGRATED ANALYSIS ===")
+print()
+for product in sales:
+    units_sold = sales[product]
+    stock_level = inventory[product]
+    vip_buyers = customers[product].count("VIP")
+    if units_sold > 10 and stock_level < 10:
+        print(f"⚠ ALERT: {product}")
+        print(f"  Sold: {units_sold} units")
+        print(f"  Stock: {stock_level} units (LOW!)")
+        print(f"  VIP Buyers: {vip_buyers}")
+        print(f"  Action: RESTOCK URGENTLY")
+        print()`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Data Integration Success!</h3>
+<p class="mb-4">You identified Product A needs urgent restocking because it's selling well, has low stock, and attracts VIP customers!</p>`,
+      },
+      {
+        id: 2,
+        title: "Section 2: Calculate Cross-Dataset Metrics",
+        explain: `<h3 class="font-bold text-lg mb-2">📊 Advanced Integration Metrics</h3>
+<p class="mb-4"><strong>Inventory Turnover:</strong> How fast inventory sells.<br>
+Formula: Sales / Average Inventory</p>
+<p class="mb-4"><strong>VIP Revenue %:</strong> What percentage of revenue comes from VIP customers.</p>
+<p class="mb-4">These metrics require data from multiple sources combined!</p>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Cross-Dataset Metrics</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+Product A:
+  Sales: 15 units × \$50 = \$750
+  Avg Inventory: 10 units
+  Turnover Rate: 1.5x
+  VIP Revenue: \$500 (67%)
+  Status: HIGH PERFORMER
+</pre>`,
+        demonstrateCode: `sales_units = {"A": 15, "B": 8, "C": 20}
+prices = {"A": 50, "B": 30, "C": 40}
+inventory = {"A": 10, "B": 25, "C": 15}
+vip_units = {"A": 10, "B": 2, "C": 5}
+
+for product in sales_units:
+    revenue = sales_units[product] * prices[product]
+    turnover = sales_units[product] / inventory[product]
+    vip_rev = vip_units[product] * prices[product]
+    vip_pct = (vip_rev / revenue) * 100
+
+    print(f"{product}: Turnover {turnover:.1f}x, VIP {vip_pct:.0f}%")`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Calculate Integrated Metrics</h3>
+<p class="mb-4">Compute turnover and VIP revenue percentage using multiple datasets.</p>`,
+        starterCode: `# Multi-dataset metrics
+sales_units = {"A": 15, "B": 8, "C": 20}
+prices = {"A": 50, "B": 30, "C": 40}
+avg_inventory = {"A": 10, "B": 25, "C": 15}
+vip_sales_units = {"A": 10, "B": 2, "C": 5}
+
+print("=== CROSS-DATASET METRICS ===")
+print()
+
+for product in sales_units:
+    # Calculate revenue
+    total_revenue = sales_units[product] * prices[product]
+
+    # Calculate turnover rate
+    turnover_rate = sales_units[product] / avg_inventory[product]
+
+    # Calculate VIP revenue
+    vip_revenue = vip_sales_units[product] * prices[product]
+    vip_percentage = (vip_revenue / total_revenue) * 100
+
+    # Output
+    print(f"Product {product}:")
+    print(f"  Total Revenue: \\\${total_revenue:,}")
+    print(f"  Turnover Rate: {turnover_rate:.1f}x")
+    print(f"  VIP Revenue: \\\${vip_revenue} ({vip_percentage:.0f}%)")
+
+    if turnover_rate > 1.0 and vip_percentage > 50:
+        print(f"  Status: ⭐ HIGH PERFORMER")
+    elif turnover_rate < 0.5:
+        print(f"  Status: ⚠ SLOW MOVER")
+    else:
+        print(f"  Status: ✓ STANDARD")
+    print()`,
+        solution: `sales_units = {"A": 15, "B": 8, "C": 20}
+prices = {"A": 50, "B": 30, "C": 40}
+avg_inventory = {"A": 10, "B": 25, "C": 15}
+vip_sales_units = {"A": 10, "B": 2, "C": 5}
+print("=== CROSS-DATASET METRICS ===")
+print()
+for product in sales_units:
+    total_revenue = sales_units[product] * prices[product]
+    turnover_rate = sales_units[product] / avg_inventory[product]
+    vip_revenue = vip_sales_units[product] * prices[product]
+    vip_percentage = (vip_revenue / total_revenue) * 100
+    print(f"Product {product}:")
+    print(f"  Total Revenue: \\\${total_revenue:,}")
+    print(f"  Turnover Rate: {turnover_rate:.1f}x")
+    print(f"  VIP Revenue: \\\${vip_revenue} ({vip_percentage:.0f}%)")
+    if turnover_rate > 1.0 and vip_percentage > 50:
+        print(f"  Status: ⭐ HIGH PERFORMER")
+    elif turnover_rate < 0.5:
+        print(f"  Status: ⚠ SLOW MOVER")
+    else:
+        print(f"  Status: ✓ STANDARD")
+    print()`,
+        hint: "Turnover = sales / inventory, VIP% = (vip_revenue / total_revenue) × 100",
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Cross-Dataset Metrics Complete!</h3>
+<p class="mb-4">Product A is a high performer with 1.5x turnover and 67% VIP revenue. Product B is a slow mover with only 0.3x turnover.</p>`,
+      },
+      {
+        id: 3,
+        title: "Section 3: Build Complete BI Dashboard",
+        explain: `<h3 class="font-bold text-lg mb-2">🎯 Complete Business Intelligence Dashboard</h3>
+<p class="mb-4">Build a unified dashboard that:</p>
+<ul class="list-disc ml-6 mb-4">
+  <li>Integrates sales, inventory, and customer data</li>
+  <li>Calculates advanced metrics</li>
+  <li>Identifies opportunities and risks</li>
+  <li>Provides actionable recommendations</li>
+</ul>`,
+        demonstrate: `<h3 class="font-bold text-lg mb-2">👀 Complete BI Dashboard</h3>
+<pre class="bg-gray-800 text-gray-100 p-4 rounded mb-4 text-sm">
+=== BUSINESS INTELLIGENCE DASHBOARD ===
+
+Overview:
+  Total Revenue: \$1,930
+  Total Units Sold: 43
+  VIP Revenue: 54%
+
+Top Performers:
+  Product A: \$750 revenue, 1.5x turnover ⭐
+  Product C: \$800 revenue, 1.3x turnover ⭐
+
+Alerts:
+  ⚠ Product A: Low stock (5 units)
+  ⚠ Product B: Slow mover (0.3x turnover)
+
+Recommendations:
+  1. RESTOCK Product A immediately
+  2. PROMOTE Product B to clear inventory
+  3. EXPAND Product C (high VIP appeal)
+</pre>`,
+        demonstrateCode: `def create_bi_dashboard(sales, prices, inv, vip):
+    total_rev = sum(sales[p] * prices[p] for p in sales)
+    total_vip_rev = sum(vip[p] * prices[p] for p in vip)
+
+    print("=== BI DASHBOARD ===")
+    print(f"Total Revenue: \\\${total_rev}")
+    print(f"VIP %: {(total_vip_rev/total_rev)*100:.0f}%")
+
+    # Alerts
+    for p in sales:
+        if sales[p] > 10 and inv[p] < 10:
+            print(f"⚠ {p}: RESTOCK")
+        elif sales[p] / inv[p] < 0.5:
+            print(f"⚠ {p}: SLOW MOVER")
+
+s = {"A": 15, "B": 8, "C": 20}
+p = {"A": 50, "B": 30, "C": 40}
+i = {"A": 5, "B": 25, "C": 12}
+v = {"A": 10, "B": 2, "C": 5}
+
+create_bi_dashboard(s, p, i, v)`,
+        yourTurn: `<h3 class="font-bold text-lg mb-2">✍️ Your Turn: Build Complete BI Dashboard</h3>
+<p class="mb-4">Create the comprehensive business intelligence dashboard.</p>`,
+        starterCode: `def create_bi_dashboard(sales, prices, inventory, vip_sales):
+    # Calculate overview metrics
+    total_revenue = sum(sales[p] * prices[p] for p in sales)
+    total_units = sum(sales[p] for p in sales)
+    total_vip_revenue = sum(vip_sales[p] * prices[p] for p in vip_sales)
+    vip_percentage = (total_vip_revenue / total_revenue) * 100
+
+    # Output dashboard
+    print("=== BUSINESS INTELLIGENCE DASHBOARD ===")
+    print()
+    print("Overview:")
+    print(f"  Total Revenue: \\\${total_revenue:,}")
+    print(f"  Total Units Sold: {total_units}")
+    print(f"  VIP Revenue %: {vip_percentage:.0f}%")
+    print()
+
+    # Analyze each product
+    print("Product Analysis:")
+    performers = []
+    alerts = []
+
+    for product in sales:
+        revenue = sales[product] * prices[product]
+        turnover = sales[product] / inventory[product]
+
+        print(f"  {product}: \\\${revenue}, {turnover:.1f}x turnover", end="")
+
+        if turnover > 1.0:
+            print(" ⭐")
+            performers.append(product)
+        else:
+            print()
+
+        # Check for alerts
+        if sales[product] > 10 and inventory[product] < 10:
+            alerts.append(f"Low stock: {product} ({inventory[product]} units)")
+        elif turnover < 0.5:
+            alerts.append(f"Slow mover: {product} ({turnover:.1f}x turnover)")
+
+    print()
+    print("Alerts:")
+    for alert in alerts:
+        print(f"  ⚠ {alert}")
+
+    print()
+    print("Recommendations:")
+    if alerts:
+        for i, alert in enumerate(alerts, 1):
+            if "Low stock" in alert:
+                print(f"  {i}. RESTOCK {alert.split(':')[1].split('(')[0].strip()} urgently")
+            elif "Slow mover" in alert:
+                print(f"  {i}. PROMOTE {alert.split(':')[1].split('(')[0].strip()} with discount")
+
+# Test data
+sales = {"A": 15, "B": 8, "C": 20}
+prices = {"A": 50, "B": 30, "C": 40}
+inventory = {"A": 5, "B": 25, "C": 12}
+vip_sales = {"A": 10, "B": 2, "C": 5}
+
+create_bi_dashboard(sales, prices, inventory, vip_sales)`,
+        solution: `def create_bi_dashboard(sales, prices, inventory, vip_sales):
+    total_revenue = sum(sales[p] * prices[p] for p in sales)
+    total_units = sum(sales[p] for p in sales)
+    total_vip_revenue = sum(vip_sales[p] * prices[p] for p in vip_sales)
+    vip_percentage = (total_vip_revenue / total_revenue) * 100
+    print("=== BUSINESS INTELLIGENCE DASHBOARD ===")
+    print()
+    print("Overview:")
+    print(f"  Total Revenue: \\\${total_revenue:,}")
+    print(f"  Total Units Sold: {total_units}")
+    print(f"  VIP Revenue %: {vip_percentage:.0f}%")
+    print()
+    print("Product Analysis:")
+    performers = []
+    alerts = []
+    for product in sales:
+        revenue = sales[product] * prices[product]
+        turnover = sales[product] / inventory[product]
+        print(f"  {product}: \\\${revenue}, {turnover:.1f}x turnover", end="")
+        if turnover > 1.0:
+            print(" ⭐")
+            performers.append(product)
+        else:
+            print()
+        if sales[product] > 10 and inventory[product] < 10:
+            alerts.append(f"Low stock: {product} ({inventory[product]} units)")
+        elif turnover < 0.5:
+            alerts.append(f"Slow mover: {product} ({turnover:.1f}x turnover)")
+    print()
+    print("Alerts:")
+    for alert in alerts:
+        print(f"  ⚠ {alert}")
+    print()
+    print("Recommendations:")
+    if alerts:
+        for i, alert in enumerate(alerts, 1):
+            if "Low stock" in alert:
+                print(f"  {i}. RESTOCK {alert.split(':')[1].split('(')[0].strip()} urgently")
+            elif "Slow mover" in alert:
+                print(f"  {i}. PROMOTE {alert.split(':')[1].split('(')[0].strip()} with discount")
+sales = {"A": 15, "B": 8, "C": 20}
+prices = {"A": 50, "B": 30, "C": 40}
+inventory = {"A": 5, "B": 25, "C": 12}
+vip_sales = {"A": 10, "B": 2, "C": 5}
+create_bi_dashboard(sales, prices, inventory, vip_sales)`,
+        checkExplanation: `<h3 class="font-bold text-lg mb-2">🎉 BI Dashboard Complete!</h3>
+<p class="mb-4">You built an enterprise-grade business intelligence dashboard!</p>
+<ul class="list-disc ml-6 mb-4">
+  <li>✓ Multi-dataset integration</li>
+  <li>✓ Advanced metrics calculation</li>
+  <li>✓ Automated alerts system</li>
+  <li>✓ Actionable recommendations</li>
+  <li>✓ Executive-level insights</li>
+</ul>
+<p class="mt-4 bg-red-50 dark:bg-red-900/20 p-4 rounded border-l-4 border-red-500">
+<strong>Professional achievement:</strong> You've mastered data integration - the foundation of business intelligence systems used by Fortune 500 companies. This is the exact type of dashboard that drives million-dollar business decisions!
+</p>
+<p class="mt-4 font-semibold text-lg">Congratulations on completing all 9 guided projects! 🎓</p>`,
+      },
+    ],
+  },
 };
 
 export default function GuidedProjectPage() {
