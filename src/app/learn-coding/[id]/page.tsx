@@ -1372,6 +1372,7 @@ export default function CodingLessonPage() {
   const [showHint, setShowHint] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
+  const [editorMounted, setEditorMounted] = useState(false);
 
   useEffect(() => {
     if (lesson) {
@@ -1379,6 +1380,10 @@ export default function CodingLessonPage() {
       setOutput("");
       setShowHint(false);
       setShowSolution(false);
+      setEditorMounted(false);
+      // Small delay to prevent Monaco "Canceled" errors during navigation
+      const timer = setTimeout(() => setEditorMounted(true), 100);
+      return () => clearTimeout(timer);
     }
   }, [currentStep, lesson]);
 
@@ -1615,20 +1620,31 @@ export default function CodingLessonPage() {
               </div>
 
               <div className="h-64">
-                <Editor
-                  height="100%"
-                  language={lesson.language}
-                  value={code}
-                  onChange={(value) => setCode(value || "")}
-                  theme="vs-dark"
-                  options={{
-                    minimap: { enabled: false },
-                    fontSize: 14,
-                    lineNumbers: "on",
-                    scrollBeyondLastLine: false,
-                    automaticLayout: true,
-                  }}
-                />
+                {editorMounted ? (
+                  <Editor
+                    height="100%"
+                    language={lesson.language}
+                    value={code}
+                    onChange={(value) => setCode(value || "")}
+                    theme="vs-dark"
+                    options={{
+                      minimap: { enabled: false },
+                      fontSize: 14,
+                      lineNumbers: "on",
+                      scrollBeyondLastLine: false,
+                      automaticLayout: true,
+                    }}
+                    loading={
+                      <div className="flex items-center justify-center h-full bg-gray-900 text-gray-400">
+                        Loading editor...
+                      </div>
+                    }
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full bg-gray-900 text-gray-400">
+                    Initializing editor...
+                  </div>
+                )}
               </div>
             </div>
 

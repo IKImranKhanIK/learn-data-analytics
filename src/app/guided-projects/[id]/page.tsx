@@ -4492,6 +4492,7 @@ export default function GuidedProjectPage() {
   const [showSolution, setShowSolution] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [editorMounted, setEditorMounted] = useState(false);
 
   useEffect(() => {
     if (project) {
@@ -4500,6 +4501,10 @@ export default function GuidedProjectPage() {
       setShowHint(false);
       setShowSolution(false);
       setShowExplanation(false);
+      setEditorMounted(false);
+      // Small delay to prevent Monaco "Canceled" errors during navigation
+      const timer = setTimeout(() => setEditorMounted(true), 100);
+      return () => clearTimeout(timer);
     }
   }, [currentSection, project]);
 
@@ -4785,20 +4790,31 @@ export default function GuidedProjectPage() {
               </div>
 
               <div className="h-96">
-                <Editor
-                  height="100%"
-                  language="python"
-                  value={code}
-                  onChange={(value) => setCode(value || "")}
-                  theme="vs-dark"
-                  options={{
-                    minimap: { enabled: false },
-                    fontSize: 14,
-                    lineNumbers: "on",
-                    scrollBeyondLastLine: false,
-                    automaticLayout: true,
-                  }}
-                />
+                {editorMounted ? (
+                  <Editor
+                    height="100%"
+                    language="python"
+                    value={code}
+                    onChange={(value) => setCode(value || "")}
+                    theme="vs-dark"
+                    options={{
+                      minimap: { enabled: false },
+                      fontSize: 14,
+                      lineNumbers: "on",
+                      scrollBeyondLastLine: false,
+                      automaticLayout: true,
+                    }}
+                    loading={
+                      <div className="flex items-center justify-center h-full bg-gray-900 text-gray-400">
+                        Loading editor...
+                      </div>
+                    }
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full bg-gray-900 text-gray-400">
+                    Initializing editor...
+                  </div>
+                )}
               </div>
             </div>
 
