@@ -107,8 +107,30 @@ export default function ExercisesPage() {
             Coding Exercises
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            Practice your coding skills with these data analytics challenges
+            Practice coding challenges for data analytics
           </p>
+
+          {/* Beginner Banner */}
+          <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-lg mb-4">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl">👋</div>
+              <div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">
+                  New to Coding? Start with our Guided Lessons!
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-3">
+                  These exercises assume you already know basic Python or SQL. If you're just starting out,
+                  we have a better place for you:
+                </p>
+                <Link
+                  href="/learn-coding"
+                  className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md font-semibold transition-colors"
+                >
+                  Go to Learn Coding (For Beginners) →
+                </Link>
+              </div>
+            </div>
+          </div>
 
           <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-lg">
             <p className="text-gray-700 dark:text-gray-300">

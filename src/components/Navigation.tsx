@@ -9,7 +9,7 @@ export default function Navigation() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Lessons", href: "/lessons" },
-    { name: "Exercises", href: "/exercises" },
+    { name: "Learn Coding", href: "/learn-coding" },
     { name: "Tools", href: "/tools" },
     { name: "Projects", href: "/projects" },
     { name: "About", href: "/about" },
