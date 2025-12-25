@@ -31,7 +31,7 @@ type SortOrder = "asc" | "desc";
 
 export default function DataTableExplorer() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [categoryFilter, setCategory Filter] = useState<string>("all");
+  const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [sortKey, setSortKey] = useState<SortKey>("id");
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
 

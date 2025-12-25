@@ -26,7 +26,7 @@ const projects = [
       "Explore web analytics data to understand user behavior and conversion rates",
     difficulty: "Intermediate",
     dataset: "Web Analytics",
-    href: null,
+    href: "/projects/3",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const projects = [
       "Build a comprehensive dashboard to track key financial metrics",
     difficulty: "Advanced",
     dataset: "Financial Statements",
-    href: null,
+    href: "/projects/4",
   },
 ];
 

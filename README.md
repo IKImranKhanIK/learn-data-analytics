@@ -14,18 +14,25 @@ Learn Data Analytics is a comprehensive educational platform that helps users ma
 ## Features
 
 - Modern, responsive UI with dark mode support
+- Comprehensive navigation with footer
 - Structured lesson curriculum covering:
+  - Introduction to Data Analytics
   - Data types and collection methods
   - Data cleaning and preparation
   - Descriptive statistics
-  - Data visualization
+  - Data visualization techniques
   - Exploratory data analysis
+  - Advanced analytics concepts
 - Interactive tools for practice:
-  - Data table explorer
-  - Chart builder
+  - Data table explorer with sorting and filtering
+  - Chart builder for visualizations
   - Statistics calculator
   - Data cleaner
-- Real-world project scenarios with varying difficulty levels
+- Real-world projects with complete implementations:
+  - Sales Data Analysis (Beginner)
+  - Customer Segmentation (Intermediate)
+  - Website Traffic Analysis (Intermediate)
+  - Financial Performance Dashboard (Advanced)
 
 ## Tech Stack
 
@@ -76,13 +83,31 @@ npm run dev
 ```
 learn-data-analytics/
 ├── src/
-│   └── app/
-│       ├── lessons/         # Lessons page
-│       ├── tools/           # Interactive tools page
-│       ├── projects/        # Projects page
-│       ├── layout.tsx       # Root layout
-│       ├── page.tsx         # Home page
-│       └── globals.css      # Global styles
+│   ├── app/
+│   │   ├── lessons/         # Lesson pages (7 lessons)
+│   │   ├── tools/           # Interactive tool pages
+│   │   │   ├── data-explorer/
+│   │   │   ├── chart-builder/
+│   │   │   ├── statistics/
+│   │   │   └── data-cleaner/
+│   │   ├── projects/        # Project pages (4 projects)
+│   │   │   ├── 1/          # Sales Data Analysis
+│   │   │   ├── 2/          # Customer Segmentation
+│   │   │   ├── 3/          # Website Traffic Analysis
+│   │   │   └── 4/          # Financial Dashboard
+│   │   ├── about/          # About page
+│   │   ├── privacy/        # Privacy policy
+│   │   ├── terms/          # Terms of service
+│   │   ├── layout.tsx      # Root layout with navigation and footer
+│   │   ├── page.tsx        # Home page
+│   │   └── globals.css     # Global styles
+│   └── components/
+│       ├── Navigation.tsx           # Main navigation bar
+│       ├── Footer.tsx              # Site footer
+│       ├── DataTableExplorer.tsx   # Data explorer component
+│       ├── BarChartBuilder.tsx     # Chart builder component
+│       ├── StatisticsCalculator.tsx # Stats calculator component
+│       └── DataCleaner.tsx         # Data cleaner component
 ├── public/                  # Static assets
 ├── .prettierrc              # Prettier configuration
 ├── .prettierignore          # Prettier ignore rules
@@ -93,13 +118,15 @@ learn-data-analytics/
 
 ## Future Enhancements
 
-- Add interactive lesson content with code examples
-- Implement data visualization tools with charting libraries
 - Add user authentication and progress tracking
 - Create downloadable datasets for projects
-- Build interactive coding exercises
+- Build interactive coding exercises with live code editors
 - Add quiz assessments for each lesson
 - Implement a community forum for discussions
+- Add more advanced charting options (scatter plots, heatmaps, etc.)
+- Create video tutorials for each lesson
+- Add machine learning and predictive analytics modules
+- Implement collaborative features for team learning
 
 ## Contributing
 
