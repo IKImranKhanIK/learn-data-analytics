@@ -7,7 +7,8 @@ const projects = [
     description:
       "Analyze retail sales data to identify trends and top-performing products",
     difficulty: "Beginner",
-    dataset: "Retail Sales (2023)",
+    dataset: "Retail Sales (2024)",
+    href: "/projects/1",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const projects = [
       "Group customers based on purchasing behavior and demographics",
     difficulty: "Intermediate",
     dataset: "Customer Database",
+    href: null,
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const projects = [
       "Explore web analytics data to understand user behavior and conversion rates",
     difficulty: "Intermediate",
     dataset: "Web Analytics",
+    href: null,
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ const projects = [
       "Build a comprehensive dashboard to track key financial metrics",
     difficulty: "Advanced",
     dataset: "Financial Statements",
+    href: null,
   },
 ];
 
@@ -83,9 +87,21 @@ export default function ProjectsPage() {
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   Dataset: {project.dataset}
                 </span>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors">
-                  Start Project
-                </button>
+                {project.href ? (
+                  <Link
+                    href={project.href}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors"
+                  >
+                    Start Project
+                  </Link>
+                ) : (
+                  <button
+                    disabled
+                    className="bg-gray-400 text-white px-4 py-2 rounded-md cursor-not-allowed"
+                  >
+                    Coming Soon
+                  </button>
+                )}
               </div>
             </div>
           ))}

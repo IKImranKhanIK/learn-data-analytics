@@ -6,7 +6,7 @@ const tools = [
     name: "Data Table Explorer",
     description: "Upload and explore datasets with sorting and filtering",
     icon: "📊",
-    href: null,
+    href: "/tools/data-explorer",
   },
   {
     id: 2,

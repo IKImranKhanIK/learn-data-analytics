@@ -25,7 +25,7 @@ const lessons = [
     description: "Learn various techniques for collecting and sourcing data",
     duration: "25 min",
     level: "Beginner",
-    href: null,
+    href: "/lessons/3",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const lessons = [
       "Master the essential skills for cleaning and preparing data for analysis",
     duration: "30 min",
     level: "Intermediate",
-    href: null,
+    href: "/lessons/4",
   },
   {
     id: 5,
