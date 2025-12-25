@@ -80,11 +80,11 @@ highest = max(sales_data)
 lowest = min(sales_data)
 
 print("=== SALES ANALYTICS DASHBOARD ===")
-print(f"Total Revenue: \${total}")
+print(f"Total Revenue: \\\${total}")
 print(f"Number of Sales: {len(sales_data)}")
-print(f"Average Sale: \${average:.2f}")
-print(f"Highest Sale: \${highest}")
-print(f"Lowest Sale: \${lowest}")
+print(f"Average Sale: \\\${average:.2f}")
+print(f"Highest Sale: \\\${highest}")
+print(f"Lowest Sale: \\\${lowest}")
 `,
         solution: `sales_data = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1450]
 total = sum(sales_data)
@@ -92,11 +92,11 @@ average = total / len(sales_data)
 highest = max(sales_data)
 lowest = min(sales_data)
 print("=== SALES ANALYTICS DASHBOARD ===")
-print(f"Total Revenue: \${total}")
-print(f"Number of Sales: \${len(sales_data)}")
-print(f"Average Sale: \${average:.2f}")
-print(f"Highest Sale: \${highest}")
-print(f"Lowest Sale: \${lowest}")`,
+print(f"Total Revenue: \\\${total}")
+print(f"Number of Sales: \\\${len(sales_data)}")
+print(f"Average Sale: \\\${average:.2f}")
+print(f"Highest Sale: \\\${highest}")
+print(f"Lowest Sale: \\\${lowest}")`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ What Just Happened?</h3>
 <p class="mb-4">You just ran a real analytics dashboard! Here's what the code did:</p>
 <ul class="list-disc ml-6 space-y-2">
@@ -219,11 +219,11 @@ sales_data = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1450]
 # Replace 0 with the correct code
 total_revenue = 0
 
-print(f"Total Revenue: \${total_revenue}")
+print(f"Total Revenue: \\\${total_revenue}")
 `,
         solution: `sales_data = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1450]
 total_revenue = sum(sales_data)
-print(f"Total Revenue: \${total_revenue}")`,
+print(f"Total Revenue: \\\${total_revenue}")`,
         hint: "Use: total_revenue = sum(sales_data)",
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Excellent! You Calculated Revenue</h3>
 <p class="mb-4">You just calculated total revenue: <strong>$12,950</strong>!</p>
@@ -277,16 +277,16 @@ total_revenue = sum(sales_data)
 # Replace 0 with the correct formula
 average_sale = 0
 
-print(f"Total Revenue: \${total_revenue}")
+print(f"Total Revenue: \\\${total_revenue}")
 print(f"Number of Sales: {len(sales_data)}")
-print(f"Average Sale: \${average_sale:.2f}")
+print(f"Average Sale: \\\${average_sale:.2f}")
 `,
         solution: `sales_data = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1450]
 total_revenue = sum(sales_data)
 average_sale = total_revenue / len(sales_data)
-print(f"Total Revenue: \${total_revenue}")
-print(f"Number of Sales: \${len(sales_data)}")
-print(f"Average Sale: \${average_sale:.2f}")`,
+print(f"Total Revenue: \\\${total_revenue}")
+print(f"Number of Sales: \\\${len(sales_data)}")
+print(f"Average Sale: \\\${average_sale:.2f}")`,
         hint: "Divide total_revenue by len(sales_data): total_revenue / len(sales_data)",
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Great Work! You Calculated the Average</h3>
 <p class="mb-4">Your average sale is <strong>$1,618.75</strong>!</p>
@@ -332,16 +332,16 @@ print(f"Lowest: {lowest}")`,
 highest_sale = 0  # Replace with max()
 lowest_sale = 0   # Replace with min()
 
-print(f"Highest Sale: \${highest_sale}")
-print(f"Lowest Sale: \${lowest_sale}")
-print(f"Range: \${highest_sale - lowest_sale}")
+print(f"Highest Sale: \\\${highest_sale}")
+print(f"Lowest Sale: \\\${lowest_sale}")
+print(f"Range: \\\${highest_sale - lowest_sale}")
 `,
         solution: `sales_data = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1450]
 highest_sale = max(sales_data)
 lowest_sale = min(sales_data)
-print(f"Highest Sale: \${highest_sale}")
-print(f"Lowest Sale: \${lowest_sale}")
-print(f"Range: \${highest_sale - lowest_sale}")`,
+print(f"Highest Sale: \\\${highest_sale}")
+print(f"Lowest Sale: \\\${lowest_sale}")
+print(f"Range: \\\${highest_sale - lowest_sale}")`,
         hint: "Use: highest_sale = max(sales_data) and lowest_sale = min(sales_data)",
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Perfect! You Found the Range</h3>
 <p class="mb-4">Your results:</p>
@@ -398,12 +398,12 @@ print("=" * 40)
 print("     SALES ANALYTICS DASHBOARD")
 print("=" * 40)
 print()
-print(f"📊 Total Revenue: \${total_revenue:,}")
+print(f"📊 Total Revenue: \\\${total_revenue:,}")
 print(f"📈 Number of Sales: {num_sales}")
-print(f"💰 Average Sale: \${average_sale:,.2f}")
-print(f"🏆 Highest Sale: \${highest_sale}")
-print(f"📉 Lowest Sale: \${lowest_sale}")
-print(f"📏 Sales Range: \${highest_sale - lowest_sale}")
+print(f"💰 Average Sale: \\\${average_sale:,.2f}")
+print(f"🏆 Highest Sale: \\\${highest_sale}")
+print(f"📉 Lowest Sale: \\\${lowest_sale}")
+print(f"📏 Sales Range: \\\${highest_sale - lowest_sale}")
 print()
 print("=" * 40)
 
@@ -423,12 +423,12 @@ print("=" * 40)
 print("     SALES ANALYTICS DASHBOARD")
 print("=" * 40)
 print()
-print(f"📊 Total Revenue: \${total_revenue:,}")
-print(f"📈 Number of Sales: \${num_sales}")
-print(f"💰 Average Sale: \${average_sale:,.2f}")
-print(f"🏆 Highest Sale: \${highest_sale}")
-print(f"📉 Lowest Sale: \${lowest_sale}")
-print(f"📏 Sales Range: \${highest_sale - lowest_sale}")
+print(f"📊 Total Revenue: \\\${total_revenue:,}")
+print(f"📈 Number of Sales: \\\${num_sales}")
+print(f"💰 Average Sale: \\\${average_sale:,.2f}")
+print(f"🏆 Highest Sale: \\\${highest_sale}")
+print(f"📉 Lowest Sale: \\\${lowest_sale}")
+print(f"📏 Sales Range: \\\${highest_sale - lowest_sale}")
 print()
 print("=" * 40)
 if average_sale > 1500:
@@ -518,7 +518,7 @@ print("=== CUSTOMER DATA ===")
 for customer in customers:
     name = customer[0]
     amount = customer[1]
-    print(f"{name}: \${amount}")
+    print(f"{name}: \\\${amount}")
 `,
         solution: `customers = [
     ["Alice", 1250],
@@ -532,7 +532,7 @@ print("=== CUSTOMER DATA ===")
 for customer in customers:
     name = customer[0]
     amount = customer[1]
-    print(f"{name}: \${amount}")`,
+    print(f"{name}: \\\${amount}")`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Understanding the Data</h3>
 <p class="mb-4">You just saw nested data! Here's what happened:</p>
 <ul class="list-disc ml-6 space-y-2">
@@ -609,7 +609,7 @@ for customer in customers:
 
     category = "UNKNOWN"  # Replace this
 
-    print(f"{name}: \${amount} → {category}")
+    print(f"{name}: \\\${amount} → {category}")
 `,
         solution: `customers = [
     ["Alice", 1250],
@@ -629,7 +629,7 @@ for customer in customers:
         category = "MEDIUM VALUE"
     else:
         category = "LOW VALUE"
-    print(f"{name}: \${amount} → {category}")`,
+    print(f"{name}: \\\${amount} → {category}")`,
         hint: "Use if amount >= 1000 for HIGH, elif amount >= 500 for MEDIUM, else for LOW",
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Perfect! You Used Conditionals</h3>
 <p class="mb-4">You just automated customer segmentation! The code:</p>
@@ -812,7 +812,7 @@ for customer in customers:
     # Add your code here
 
 print(f"🏆 Top Customer: {max_customer}")
-print(f"   Purchase Amount: \${max_amount}")
+print(f"   Purchase Amount: \\\${max_amount}")
 `,
         solution: `customers = [
     ["Alice", 1250],
@@ -831,7 +831,7 @@ for customer in customers:
         max_amount = amount
         max_customer = name
 print(f"🏆 Top Customer: {max_customer}")
-print(f"   Purchase Amount: \${max_amount}")`,
+print(f"   Purchase Amount: \\\${max_amount}")`,
         hint: "Use if amount > max_amount, then update both max_amount and max_customer",
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Found the VIP!</h3>
 <p class="mb-4">Your top customer is <strong>David</strong> with $2,100 in purchases!</p>
@@ -905,10 +905,10 @@ for customer in customers:
 total_revenue = high_revenue + medium_revenue + low_revenue
 
 print("=== REVENUE BY SEGMENT ===")
-print(f"High Value Revenue: \${high_revenue}")
-print(f"Medium Value Revenue: \${medium_revenue}")
-print(f"Low Value Revenue: \${low_revenue}")
-print(f"Total Revenue: \${total_revenue}")
+print(f"High Value Revenue: \\\${high_revenue}")
+print(f"Medium Value Revenue: \\\${medium_revenue}")
+print(f"Low Value Revenue: \\\${low_revenue}")
+print(f"Total Revenue: \\\${total_revenue}")
 `,
         solution: `customers = [
     ["Alice", 1250],
@@ -932,10 +932,10 @@ for customer in customers:
         low_revenue += amount
 total_revenue = high_revenue + medium_revenue + low_revenue
 print("=== REVENUE BY SEGMENT ===")
-print(f"High Value Revenue: \${high_revenue}")
-print(f"Medium Value Revenue: \${medium_revenue}")
-print(f"Low Value Revenue: \${low_revenue}")
-print(f"Total Revenue: \${total_revenue}")`,
+print(f"High Value Revenue: \\\${high_revenue}")
+print(f"Medium Value Revenue: \\\${medium_revenue}")
+print(f"Low Value Revenue: \\\${low_revenue}")
+print(f"Total Revenue: \\\${total_revenue}")`,
         hint: "Use high_revenue += amount in the if block, and similar for other segments",
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Revenue Analysis Complete!</h3>
 <p class="mb-4">Your analysis shows:</p>
@@ -1032,19 +1032,19 @@ for customer in customers:
         max_amount = amount
         max_customer = name
 
-    print(f"  {name}: \${amount} → {category}")
+    print(f"  {name}: \\\${amount} → {category}")
 
 total_revenue = high_revenue + medium_revenue + low_revenue
 
 print()
 print("=" * 45)
 print("SEGMENT SUMMARY:")
-print(f"  📊 High Value: {high_count} customers, \${high_revenue:,} revenue")
-print(f"  📊 Medium Value: {medium_count} customers, \${medium_revenue:,} revenue")
-print(f"  📊 Low Value: {low_count} customers, \${low_revenue:,} revenue")
+print(f"  📊 High Value: {high_count} customers, \\\${high_revenue:,} revenue")
+print(f"  📊 Medium Value: {medium_count} customers, \\\${medium_revenue:,} revenue")
+print(f"  📊 Low Value: {low_count} customers, \\\${low_revenue:,} revenue")
 print()
-print(f"  💰 Total Revenue: \${total_revenue:,}")
-print(f"  🏆 Top Customer: {max_customer} (\${max_amount:,})")
+print(f"  💰 Total Revenue: \\\${total_revenue:,}")
+print(f"  🏆 Top Customer: {max_customer} (\\\${max_amount:,})")
 print()
 print("=" * 45)
 
@@ -1095,17 +1095,17 @@ for customer in customers:
     if amount > max_amount:
         max_amount = amount
         max_customer = name
-    print(f"  {name}: \${amount} → {category}")
+    print(f"  {name}: \\\${amount} → {category}")
 total_revenue = high_revenue + medium_revenue + low_revenue
 print()
 print("=" * 45)
 print("SEGMENT SUMMARY:")
-print(f"  📊 High Value: {high_count} customers, \${high_revenue:,} revenue")
-print(f"  📊 Medium Value: {medium_count} customers, \${medium_revenue:,} revenue")
-print(f"  📊 Low Value: {low_count} customers, \${low_revenue:,} revenue")
+print(f"  📊 High Value: {high_count} customers, \\\${high_revenue:,} revenue")
+print(f"  📊 Medium Value: {medium_count} customers, \\\${medium_revenue:,} revenue")
+print(f"  📊 Low Value: {low_count} customers, \\\${low_revenue:,} revenue")
 print()
-print(f"  💰 Total Revenue: \${total_revenue:,}")
-print(f"  🏆 Top Customer: {max_customer} (\${max_amount:,})")
+print(f"  💰 Total Revenue: \\\${total_revenue:,}")
+print(f"  🏆 Top Customer: {max_customer} (\\\${max_amount:,})")
 print()
 print("=" * 45)
 high_percentage = (high_revenue / total_revenue) * 100
@@ -1637,13 +1637,13 @@ products = [
 
 print("=== Daily Sales ===")
 for i, sales in enumerate(daily_sales, 1):
-    print(f"Day {i}: \${sales}")
+    print(f"Day {i}: \\\${sales}")
 
 print()
 print("=== Products ===")
 for product in products:
     revenue = product["price"] * product["sold"]
-    print(f"{product['name']}: {product['sold']} sold, \${revenue} revenue")
+    print(f"{product['name']}: {product['sold']} sold, \\\${revenue} revenue")
 `,
         solution: `daily_sales = [1250, 1450, 1100, 1350, 1600, 1200, 1550]
 products = [
@@ -1653,12 +1653,12 @@ products = [
 ]
 print("=== Daily Sales ===")
 for i, sales in enumerate(daily_sales, 1):
-    print(f"Day {i}: \${sales}")
+    print(f"Day {i}: \\\${sales}")
 print()
 print("=== Products ===")
 for product in products:
     revenue = product["price"] * product["sold"]
-    print(f"{product['name']}: {product['sold']} sold, \${revenue} revenue")`,
+    print(f"{product['name']}: {product['sold']} sold, \\\${revenue} revenue")`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Data Structure Understood!</h3>
 <p class="mb-4">You're working with dictionaries - a powerful way to store structured data with key-value pairs!</p>`,
       },
@@ -1702,9 +1702,9 @@ laptop = calculate_revenue(899, 15)
 mouse = calculate_revenue(25, 45)
 keyboard = calculate_revenue(75, 30)
 
-print(f"Laptop revenue: \${laptop}")
-print(f"Mouse revenue: \${mouse}")
-print(f"Keyboard revenue: \${keyboard}")
+print(f"Laptop revenue: \\\${laptop}")
+print(f"Mouse revenue: \\\${mouse}")
+print(f"Keyboard revenue: \\\${keyboard}")
 `,
         solution: `def calculate_revenue(price, quantity):
     return price * quantity
@@ -1713,9 +1713,9 @@ laptop = calculate_revenue(899, 15)
 mouse = calculate_revenue(25, 45)
 keyboard = calculate_revenue(75, 30)
 
-print(f"Laptop revenue: \${laptop}")
-print(f"Mouse revenue: \${mouse}")
-print(f"Keyboard revenue: \${keyboard}")`,
+print(f"Laptop revenue: \\\${laptop}")
+print(f"Mouse revenue: \\\${mouse}")
+print(f"Keyboard revenue: \\\${keyboard}")`,
         hint: "Replace pass with: return price * quantity",
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ First Function Created!</h3>
 <p class="mb-4">You just wrote reusable code! Now you can calculate revenue for any product without repeating the formula.</p>`,
@@ -1781,8 +1781,8 @@ daily_sales = [1250, 1450, 1100, 1350, 1600, 1200, 1550, 1650]
 trend, old_avg, new_avg = analyze_trend(daily_sales)
 
 print(f"Sales Trend Analysis:")
-print(f"  Earlier period avg: \${old_avg:.2f}")
-print(f"  Recent period avg: \${new_avg:.2f}")
+print(f"  Earlier period avg: \\\${old_avg:.2f}")
+print(f"  Recent period avg: \\\${new_avg:.2f}")
 print(f"  Trend: {trend}")
 `,
         solution: `def analyze_trend(sales_data):
@@ -1802,8 +1802,8 @@ print(f"  Trend: {trend}")
 daily_sales = [1250, 1450, 1100, 1350, 1600, 1200, 1550, 1650]
 trend, old_avg, new_avg = analyze_trend(daily_sales)
 print(f"Sales Trend Analysis:")
-print(f"  Earlier period avg: \${old_avg:.2f}")
-print(f"  Recent period avg: \${new_avg:.2f}")
+print(f"  Earlier period avg: \\\${old_avg:.2f}")
+print(f"  Recent period avg: \\\${new_avg:.2f}")
 print(f"  Trend: {trend}")`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Trend Analysis Working!</h3>
 <p class="mb-4">Your function detected an INCREASING trend! This helps businesses spot growth or decline early.</p>`,
@@ -1865,7 +1865,7 @@ ranked = rank_products(products)
 print("=== TOP PRODUCTS BY REVENUE ===")
 for i, product in enumerate(ranked, 1):
     revenue = product["price"] * product["sold"]
-    print(f"{i}. {product['name']}: {product['sold']} sold = \${revenue:,}")
+    print(f"{i}. {product['name']}: {product['sold']} sold = \\\${revenue:,}")
 `,
         solution: `def rank_products(products):
     sorted_products = sorted(products,
@@ -1886,7 +1886,7 @@ ranked = rank_products(products)
 print("=== TOP PRODUCTS BY REVENUE ===")
 for i, product in enumerate(ranked, 1):
     revenue = product["price"] * product["sold"]
-    print(f"{i}. {product['name']}: {product['sold']} sold = \${revenue:,}")`,
+    print(f"{i}. {product['name']}: {product['sold']} sold = \\\${revenue:,}")`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Products Ranked!</h3>
 <p class="mb-4">Your top revenue generator is the Laptop at $13,485!</p>
 <p class="mb-4">This analysis helps businesses decide which products to stock more of.</p>`,
@@ -1944,9 +1944,9 @@ daily_sales = [1250, 1450, 1100, 1350, 1600, 1200, 1550, 1650]
 forecast, growth, current = forecast_sales(daily_sales)
 
 print("=== SALES FORECAST ===")
-print(f"Current average: \${current:.2f}")
+print(f"Current average: \\\${current:.2f}")
 print(f"Growth rate: {growth * 100:.1f}%")
-print(f"Forecasted average: \${forecast:.2f}")
+print(f"Forecasted average: \\\${forecast:.2f}")
 `,
         solution: `def forecast_sales(daily_sales):
     mid = len(daily_sales) // 2
@@ -1962,9 +1962,9 @@ daily_sales = [1250, 1450, 1100, 1350, 1600, 1200, 1550, 1650]
 forecast, growth, current = forecast_sales(daily_sales)
 
 print("=== SALES FORECAST ===")
-print(f"Current average: \${current:.2f}")
+print(f"Current average: \\\${current:.2f}")
 print(f"Growth rate: {growth * 100:.1f}%")
-print(f"Forecasted average: \${forecast:.2f}")`,
+print(f"Forecasted average: \\\${forecast:.2f}")`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Forecasting Works!</h3>
 <p class="mb-4">You predicted future sales based on historical trends! This helps with inventory planning and revenue projections.</p>`,
       },
@@ -2036,8 +2036,8 @@ print()
 # Trend analysis
 trend, old_avg, new_avg = analyze_trend(daily_sales)
 print("📈 SALES TREND ANALYSIS")
-print(f"   Early period average: \${old_avg:.2f}")
-print(f"   Recent period average: \${new_avg:.2f}")
+print(f"   Early period average: \\\${old_avg:.2f}")
+print(f"   Recent period average: \\\${new_avg:.2f}")
 print(f"   Trend: {trend}")
 print()
 
@@ -2046,24 +2046,24 @@ ranked = rank_products(products)
 print("🏆 TOP PRODUCTS BY REVENUE")
 for i, product in enumerate(ranked[:3], 1):
     revenue = calculate_revenue(product["price"], product["sold"])
-    print(f"   {i}. {product['name']}: \${revenue:,}")
+    print(f"   {i}. {product['name']}: \\\${revenue:,}")
 print()
 
 # Forecast
 forecast, growth, current = forecast_sales(daily_sales)
 print("🔮 SALES FORECAST")
-print(f"   Current average: \${current:.2f}")
+print(f"   Current average: \\\${current:.2f}")
 print(f"   Growth rate: {growth * 100:.1f}%")
-print(f"   Next period forecast: \${forecast:.2f}")
+print(f"   Next period forecast: \\\${forecast:.2f}")
 print()
 
 # Summary
 total_revenue = sum(calculate_revenue(p["price"], p["sold"]) for p in products)
 print("=" * 50)
 print("SUMMARY")
-print(f"  📊 Total product revenue: \${total_revenue:,}")
+print(f"  📊 Total product revenue: \\\${total_revenue:,}")
 print(f"  📈 Sales trend: {trend}")
-print(f"  🎯 Forecast: \${forecast:.2f} avg/day")
+print(f"  🎯 Forecast: \\\${forecast:.2f} avg/day")
 print("=" * 50)
 `,
         solution: `def calculate_revenue(price, quantity):
@@ -2106,28 +2106,28 @@ print("=" * 50)
 print()
 trend, old_avg, new_avg = analyze_trend(daily_sales)
 print("📈 SALES TREND ANALYSIS")
-print(f"   Early period average: \${old_avg:.2f}")
-print(f"   Recent period average: \${new_avg:.2f}")
+print(f"   Early period average: \\\${old_avg:.2f}")
+print(f"   Recent period average: \\\${new_avg:.2f}")
 print(f"   Trend: {trend}")
 print()
 ranked = rank_products(products)
 print("🏆 TOP PRODUCTS BY REVENUE")
 for i, product in enumerate(ranked[:3], 1):
     revenue = calculate_revenue(product["price"], product["sold"])
-    print(f"   {i}. {product['name']}: \${revenue:,}")
+    print(f"   {i}. {product['name']}: \\\${revenue:,}")
 print()
 forecast, growth, current = forecast_sales(daily_sales)
 print("🔮 SALES FORECAST")
-print(f"   Current average: \${current:.2f}")
+print(f"   Current average: \\\${current:.2f}")
 print(f"   Growth rate: {growth * 100:.1f}%")
-print(f"   Next period forecast: \${forecast:.2f}")
+print(f"   Next period forecast: \\\${forecast:.2f}")
 print()
 total_revenue = sum(calculate_revenue(p["price"], p["sold"]) for p in products)
 print("=" * 50)
 print("SUMMARY")
-print(f"  📊 Total product revenue: \${total_revenue:,}")
+print(f"  📊 Total product revenue: \\\${total_revenue:,}")
 print(f"  📈 Sales trend: {trend}")
-print(f"  🎯 Forecast: \${forecast:.2f} avg/day")
+print(f"  🎯 Forecast: \\\${forecast:.2f} avg/day")
 print("=" * 50)`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">🎉 E-COMMERCE SYSTEM COMPLETE!</h3>
 <p class="mb-4 text-xl font-bold">You built a professional analytics platform!</p>
@@ -2204,7 +2204,7 @@ for customer in customers:
     print(f"{customer['name']}:")
     print(f"  Days since last purchase: {customer['days_since_purchase']}")
     print(f"  Number of purchases: {customer['num_purchases']}")
-    print(f"  Total spent: \${customer['total_spent']}")
+    print(f"  Total spent: \\\${customer['total_spent']}")
     print()
 `,
         solution: `customers = [
@@ -2219,7 +2219,7 @@ for customer in customers:
     print(f"{customer['name']}:")
     print(f"  Days since last purchase: {customer['days_since_purchase']}")
     print(f"  Number of purchases: {customer['num_purchases']}")
-    print(f"  Total spent: \${customer['total_spent']}")
+    print(f"  Total spent: \\\${customer['total_spent']}")
     print()`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ RFM Data Understood!</h3>
 <p class="mb-4">You've seen the three key metrics for customer segmentation. Now let's score them!</p>`,
@@ -2782,7 +2782,7 @@ for customer in customers:
 print("=== SEGMENT DISTRIBUTION ===")
 for segment, count in segment_counts.items():
     total_value = total_value_by_segment[segment]
-    print(f"{segment}: {count} customers, \${total_value:,} total value")
+    print(f"{segment}: {count} customers, \\\${total_value:,} total value")
 `,
         solution: `def score_recency(days):
     if days <= 30:
@@ -2854,7 +2854,7 @@ for customer in customers:
 print("=== SEGMENT DISTRIBUTION ===")
 for segment, count in segment_counts.items():
     total_value = total_value_by_segment[segment]
-    print(f"{segment}: {count} customers, \${total_value:,} total value")`,
+    print(f"{segment}: {count} customers, \\\${total_value:,} total value")`,
         checkExplanation: `<h3 class="font-bold text-lg mb-2">✅ Segment Distribution Calculated!</h3>
 <p class="mb-4">Now you can see which segments dominate your customer base and where the most value is!</p>`,
       },
@@ -2952,7 +2952,7 @@ for customer in customers:
     segment = get_segment(r, f, m)
     segments_list.append(segment)
 
-    print(f"{customer['name']:<10} | RFM: {r}{f}{m} | {segment:<20} | \${customer['total_spent']:,}")
+    print(f"{customer['name']:<10} | RFM: {r}{f}{m} | {segment:<20} | \\\${customer['total_spent']:,}")
 
 print()
 print("=" * 60)
@@ -2980,7 +2980,7 @@ for segment in ["Champion", "Loyal Customer", "Potential", "At Risk", "Lost"]:
         count = segment_counts[segment]
         value = total_value_by_segment[segment]
         pct = (count / len(customers)) * 100
-        print(f"{segment:<20} | {count} customers ({pct:.1f}%) | \${value:,} total value")
+        print(f"{segment:<20} | {count} customers ({pct:.1f}%) | \\\${value:,} total value")
 
 print()
 print("=" * 60)
@@ -3060,7 +3060,7 @@ for customer in customers:
     m = score_monetary(customer["total_spent"])
     segment = get_segment(r, f, m)
     segments_list.append(segment)
-    print(f"{customer['name']:<10} | RFM: {r}{f}{m} | {segment:<20} | \${customer['total_spent']:,}")
+    print(f"{customer['name']:<10} | RFM: {r}{f}{m} | {segment:<20} | \\\${customer['total_spent']:,}")
 print()
 print("=" * 60)
 segment_counts = {}
@@ -3083,7 +3083,7 @@ for segment in ["Champion", "Loyal Customer", "Potential", "At Risk", "Lost"]:
         count = segment_counts[segment]
         value = total_value_by_segment[segment]
         pct = (count / len(customers)) * 100
-        print(f"{segment:<20} | {count} customers ({pct:.1f}%) | \${value:,} total value")
+        print(f"{segment:<20} | {count} customers ({pct:.1f}%) | \\\${value:,} total value")
 print()
 print("=" * 60)
 print("MARKETING RECOMMENDATIONS:")
