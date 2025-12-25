@@ -590,6 +590,775 @@ print(f"High sales (>$1800): \${high_sales} (\${high_sales/total_count*100:.1f}%
       },
     ],
   },
+  "5": {
+    title: "Conditional Logic (if/else)",
+    language: "python",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: What are Conditionals?",
+        explanation: `<strong>Conditionals</strong> let your code make decisions based on data.
+
+Think of it like: "IF this condition is true, THEN do this action."
+
+<strong>Basic syntax:</strong>
+<code>if condition:</code>
+<code>    action</code>
+
+The indentation (spaces) is important! Python uses it to know what's inside the if block.`,
+        starterCode: `# Check if a sale is high value
+sale = 2000
+
+if sale > 1500:
+    print("This is a high-value sale!")
+`,
+        solution: `sale = 2000
+if sale > 1500:
+    print("This is a high-value sale!")`,
+        hint: "The code runs the print statement only if sale is greater than 1500",
+      },
+      {
+        id: 2,
+        title: "Step 2: if-else Statements",
+        explanation: `Often you want to do one thing if a condition is true, and something ELSE if it's false.
+
+<strong>if-else syntax:</strong>
+<code>if condition:</code>
+<code>    action_when_true</code>
+<code>else:</code>
+<code>    action_when_false</code>
+
+This lets you handle both cases!`,
+        starterCode: `sale = 1200
+
+if sale >= 1500:
+    print("High-value sale ✓")
+else:
+    print("Regular sale")
+`,
+        solution: `sale = 1200
+if sale >= 1500:
+    print("High-value sale ✓")
+else:
+    print("Regular sale")`,
+        hint: "Since 1200 < 1500, the else block runs!",
+      },
+      {
+        id: 3,
+        title: "Step 3: Multiple Conditions (elif)",
+        explanation: `What if you have more than two categories?
+
+Use <code>elif</code> (else if) for multiple conditions:
+
+<code>if condition1:</code>
+<code>    action1</code>
+<code>elif condition2:</code>
+<code>    action2</code>
+<code>else:</code>
+<code>    action3</code>
+
+Python checks each condition in order until one is true.`,
+        starterCode: `sale = 1650
+
+if sale < 1000:
+    category = "Low"
+elif sale < 1500:
+    category = "Medium"
+else:
+    category = "High"
+
+print(f"Sale category: {category}")
+`,
+        solution: `sale = 1650
+if sale < 1000:
+    category = "Low"
+elif sale < 1500:
+    category = "Medium"
+else:
+    category = "High"
+print(f"Sale category: {category}")`,
+        hint: "1650 is not < 1000, not < 1500, so it goes to else → High",
+      },
+      {
+        id: 4,
+        title: "Step 4: Comparison Operators",
+        explanation: `Learn all the ways to compare values:
+
+- <code>==</code> equal to (note: two equals!)
+- <code>!=</code> not equal to
+- <code>></code> greater than
+- <code><</code> less than
+- <code>>=</code> greater than or equal
+- <code><=</code> less than or equal
+
+These are crucial for data filtering!`,
+        starterCode: `revenue = 50000
+target = 50000
+
+# Check if we met the target
+if revenue >= target:
+    print("✓ Target achieved!")
+    if revenue == target:
+        print("  (Exactly on target)")
+    else:
+        print(f"  (Exceeded by \\\${revenue - target})")
+else:
+    shortfall = target - revenue
+    print(f"✗ Missed target by \\\${shortfall}")
+`,
+        solution: `revenue = 50000
+target = 50000
+if revenue >= target:
+    print("✓ Target achieved!")
+    if revenue == target:
+        print("  (Exactly on target)")
+    else:
+        print(f"  (Exceeded by \\\${revenue - target})")
+else:
+    shortfall = target - revenue
+    print(f"✗ Missed target by \\\${shortfall}")`,
+        hint: "This shows nested if statements - one inside another!",
+      },
+      {
+        id: 5,
+        title: "Step 5: Real Analytics - Customer Scoring",
+        explanation: `Let's use conditionals to score customers based on their purchase history!
+
+We'll categorize customers as:
+- VIP: >$5000 total purchases
+- Regular: $1000-$5000
+- New: <$1000
+
+This is a real-world analytics use case!`,
+        starterCode: `# Customer purchase data
+customer_name = "Sarah"
+total_purchases = 6500
+
+# Score the customer
+if total_purchases > 5000:
+    tier = "VIP"
+    discount = 20
+elif total_purchases >= 1000:
+    tier = "Regular"
+    discount = 10
+else:
+    tier = "New"
+    discount = 5
+
+print(f"=== Customer Analysis ===")
+print(f"Customer: {customer_name}")
+print(f"Total Purchases: \\\${total_purchases}")
+print(f"Tier: {tier}")
+print(f"Eligible Discount: {discount}%")
+
+# Personalized message
+if tier == "VIP":
+    print("\\n🌟 Thank you for being a valued VIP customer!")
+`,
+        solution: `customer_name = "Sarah"
+total_purchases = 6500
+if total_purchases > 5000:
+    tier = "VIP"
+    discount = 20
+elif total_purchases >= 1000:
+    tier = "Regular"
+    discount = 10
+else:
+    tier = "New"
+    discount = 5
+print(f"=== Customer Analysis ===")
+print(f"Customer: {customer_name}")
+print(f"Total Purchases: \\\${total_purchases}")
+print(f"Tier: {tier}")
+print(f"Eligible Discount: {discount}%")
+if tier == "VIP":
+    print("\\n🌟 Thank you for being a valued VIP customer!")`,
+        hint: "This is how real customer segmentation works in business analytics!",
+      },
+    ],
+  },
+  "6": {
+    title: "Functions - Reusable Code",
+    language: "python",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: What is a Function?",
+        explanation: `A <strong>function</strong> is a reusable block of code that performs a specific task.
+
+Instead of writing the same code over and over, write it once in a function, then call it whenever you need it!
+
+<strong>Basic syntax:</strong>
+<code>def function_name():</code>
+<code>    code to run</code>
+
+<code>def</code> means "define" - you're defining a new function.`,
+        starterCode: `# Define a function
+def greet():
+    print("Hello! Welcome to analytics!")
+
+# Call the function
+greet()
+
+# Call it again!
+greet()
+`,
+        solution: `def greet():
+    print("Hello! Welcome to analytics!")
+greet()
+greet()`,
+        hint: "You can call a function as many times as you want - that's the power!",
+      },
+      {
+        id: 2,
+        title: "Step 2: Functions with Parameters",
+        explanation: `Functions can accept <strong>parameters</strong> (inputs) to work with different data.
+
+<code>def function_name(parameter):</code>
+<code>    use parameter here</code>
+
+Think of parameters as variables that get their value when you call the function.`,
+        starterCode: `# Function that accepts a name
+def greet_customer(name):
+    print(f"Hello, {name}! Thanks for your purchase.")
+
+# Call with different names
+greet_customer("Sarah")
+greet_customer("Mike")
+greet_customer("Emma")
+`,
+        solution: `def greet_customer(name):
+    print(f"Hello, {name}! Thanks for your purchase.")
+greet_customer("Sarah")
+greet_customer("Mike")
+greet_customer("Emma")`,
+        hint: "The same function works with different inputs - that's efficiency!",
+      },
+      {
+        id: 3,
+        title: "Step 3: Functions that Return Values",
+        explanation: `Functions can <strong>return</strong> a value back to you using the <code>return</code> keyword.
+
+This lets you:
+1. Calculate something in the function
+2. Get the result back
+3. Use that result elsewhere
+
+It's like asking a calculator for an answer!`,
+        starterCode: `# Function that calculates and returns tax
+def calculate_tax(amount):
+    tax = amount * 0.08  # 8% tax
+    return tax
+
+# Use the function
+sale = 1000
+tax_amount = calculate_tax(sale)
+
+print(f"Sale: \\\${sale}")
+print(f"Tax: \\\${tax_amount}")
+print(f"Total: \\\${sale + tax_amount}")
+`,
+        solution: `def calculate_tax(amount):
+    tax = amount * 0.08
+    return tax
+sale = 1000
+tax_amount = calculate_tax(sale)
+print(f"Sale: \\\${sale}")
+print(f"Tax: \\\${tax_amount}")
+print(f"Total: \\\${sale + tax_amount}")`,
+        hint: "The function gives you back a value that you can store and use!",
+      },
+      {
+        id: 4,
+        title: "Step 4: Multiple Parameters",
+        explanation: `Functions can accept multiple parameters!
+
+Just separate them with commas:
+<code>def function_name(param1, param2, param3):</code>
+
+This makes functions very flexible.`,
+        starterCode: `# Calculate total with tax and discount
+def calculate_total(price, tax_rate, discount):
+    subtotal = price - discount
+    tax = subtotal * tax_rate
+    total = subtotal + tax
+    return total
+
+# Use the function
+final_price = calculate_total(1000, 0.08, 50)
+print(f"Final price: \\\${final_price:.2f}")
+
+# Try different values
+sale_price = calculate_total(2500, 0.08, 200)
+print(f"Sale price: \\\${sale_price:.2f}")
+`,
+        solution: `def calculate_total(price, tax_rate, discount):
+    subtotal = price - discount
+    tax = subtotal * tax_rate
+    total = subtotal + tax
+    return total
+final_price = calculate_total(1000, 0.08, 50)
+print(f"Final price: \\\${final_price:.2f}")
+sale_price = calculate_total(2500, 0.08, 200)
+print(f"Sale price: \\\${sale_price:.2f}")`,
+        hint: "One function can handle complex calculations with many inputs!",
+      },
+      {
+        id: 5,
+        title: "Step 5: Real Analytics Function",
+        explanation: `Let's build a professional analytics function that calculates key metrics!
+
+This function will:
+- Accept a list of sales
+- Calculate total, average, min, and max
+- Return all metrics
+
+This is the kind of function you'd use in real data analysis!`,
+        starterCode: `# Analytics function
+def analyze_sales(sales_list):
+    total = sum(sales_list)
+    average = total / len(sales_list)
+    highest = max(sales_list)
+    lowest = min(sales_list)
+
+    return total, average, highest, lowest
+
+# Use the function on different datasets
+week1_sales = [1200, 1500, 1800, 1350, 1900]
+week2_sales = [2100, 1900, 2200, 2400, 2000]
+
+# Get metrics for week 1
+total1, avg1, high1, low1 = analyze_sales(week1_sales)
+
+print("=== Week 1 Analysis ===")
+print(f"Total: \\\${total1}")
+print(f"Average: \\\${avg1:.2f}")
+print(f"Highest: \\\${high1}")
+print(f"Lowest: \\\${low1}")
+
+# Get metrics for week 2
+total2, avg2, high2, low2 = analyze_sales(week2_sales)
+
+print("\\n=== Week 2 Analysis ===")
+print(f"Total: \\\${total2}")
+print(f"Average: \\\${avg2:.2f}")
+print(f"Highest: \\\${high2}")
+print(f"Lowest: \\\${low2}")
+
+# Compare weeks
+growth = ((total2 - total1) / total1) * 100
+print(f"\\nWeek-over-week growth: {growth:.1f}%")
+`,
+        solution: `def analyze_sales(sales_list):
+    total = sum(sales_list)
+    average = total / len(sales_list)
+    highest = max(sales_list)
+    lowest = min(sales_list)
+    return total, average, highest, lowest
+week1_sales = [1200, 1500, 1800, 1350, 1900]
+week2_sales = [2100, 1900, 2200, 2400, 2000]
+total1, avg1, high1, low1 = analyze_sales(week1_sales)
+print("=== Week 1 Analysis ===")
+print(f"Total: \\\${total1}")
+print(f"Average: \\\${avg1:.2f}")
+print(f"Highest: \\\${high1}")
+print(f"Lowest: \\\${low1}")
+total2, avg2, high2, low2 = analyze_sales(week2_sales)
+print("\\n=== Week 2 Analysis ===")
+print(f"Total: \\\${total2}")
+print(f"Average: \\\${avg2:.2f}")
+print(f"Highest: \\\${high2}")
+print(f"Lowest: \\\${low2}")
+growth = ((total2 - total1) / total1) * 100
+print(f"\\nWeek-over-week growth: {growth:.1f}%")`,
+        hint: "Functions returning multiple values is incredibly powerful for analytics!",
+      },
+    ],
+  },
+  "7": {
+    title: "Introduction to SQL",
+    language: "sql",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: What is SQL?",
+        explanation: `<strong>SQL</strong> (Structured Query Language) is the language used to work with databases.
+
+Almost every company stores data in databases:
+- Customer information
+- Sales records
+- Product catalogs
+- Employee data
+
+SQL lets you <strong>query</strong> (ask questions about) this data!`,
+        starterCode: `-- This is a comment in SQL (starts with --)
+-- Let's view all data from the employees table
+
+SELECT * FROM employees;`,
+        solution: `SELECT * FROM employees;`,
+        hint: "SELECT * means 'select all columns'. FROM tells SQL which table to get data from.",
+      },
+      {
+        id: 2,
+        title: "Step 2: Selecting Specific Columns",
+        explanation: `Usually you don't need ALL columns. You can specify which ones you want.
+
+<code>SELECT column1, column2 FROM table_name;</code>
+
+This is more efficient and makes results easier to read!`,
+        starterCode: `-- Get just the name and salary from employees
+-- (Instead of all columns)
+
+SELECT name, salary FROM employees;`,
+        solution: `SELECT name, salary FROM employees;`,
+        hint: "List the column names you want, separated by commas",
+      },
+      {
+        id: 3,
+        title: "Step 3: Viewing Table Structure",
+        explanation: `Before querying, it helps to know what columns a table has!
+
+Common table structures:
+- <strong>employees:</strong> id, name, department, salary, hire_date
+- <strong>sales:</strong> id, product, amount, date, customer_id
+- <strong>products:</strong> id, name, price, category`,
+        starterCode: `-- Let's get all columns from the sales table
+-- to see what data is available
+
+SELECT * FROM sales;`,
+        solution: `SELECT * FROM sales;`,
+        hint: "This shows you all the sales data available in the database",
+      },
+      {
+        id: 4,
+        title: "Step 4: Selecting from Multiple Tables",
+        explanation: `Databases usually have multiple tables for different types of data.
+
+You need to know which table contains the data you're looking for:
+- Want employee info? → <code>SELECT * FROM employees</code>
+- Want sales data? → <code>SELECT * FROM sales</code>
+- Want product details? → <code>SELECT * FROM products</code>`,
+        starterCode: `-- View all products in the database
+
+SELECT * FROM products;`,
+        solution: `SELECT * FROM products;`,
+        hint: "Different tables store different types of business data",
+      },
+      {
+        id: 5,
+        title: "Step 5: Your First Analytics Query",
+        explanation: `Let's combine what you learned to answer a real business question:
+
+<strong>Question:</strong> "What products do we sell and at what prices?"
+
+This is the kind of query analysts write every day!`,
+        starterCode: `-- Get product names and prices
+-- This tells us our product catalog
+
+SELECT name, price FROM products;`,
+        solution: `SELECT name, price FROM products;`,
+        hint: "This is your first real analytics query - simple but powerful!",
+      },
+    ],
+  },
+  "8": {
+    title: "SQL Filtering (WHERE)",
+    language: "sql",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: What is WHERE?",
+        explanation: `The <code>WHERE</code> clause filters data to show only rows that meet a condition.
+
+Think of it like: "Show me all employees WHERE salary > 50000"
+
+<strong>Syntax:</strong>
+<code>SELECT columns FROM table WHERE condition;</code>
+
+This is one of the most-used SQL features!`,
+        starterCode: `-- Get employees who earn more than 60000
+
+SELECT name, salary
+FROM employees
+WHERE salary > 60000;`,
+        solution: `SELECT name, salary FROM employees WHERE salary > 60000;`,
+        hint: "WHERE filters the results before showing them to you",
+      },
+      {
+        id: 2,
+        title: "Step 2: Comparison Operators",
+        explanation: `WHERE uses comparison operators:
+- <code>=</code> equal to
+- <code>></code> greater than
+- <code><</code> less than
+- <code>>=</code> greater than or equal
+- <code><=</code> less than or equal
+- <code>!=</code> or <code><></code> not equal
+
+These let you filter data precisely!`,
+        starterCode: `-- Find products that cost exactly 25
+
+SELECT name, price
+FROM products
+WHERE price = 25;`,
+        solution: `SELECT name, price FROM products WHERE price = 25;`,
+        hint: "Use = for exact matches (note: single = in SQL, not ==)",
+      },
+      {
+        id: 3,
+        title: "Step 3: Filtering Text",
+        explanation: `You can filter by text too! Use quotes around text values.
+
+<code>WHERE department = 'Sales'</code>
+<code>WHERE name = 'Product A'</code>
+
+Text comparisons are case-sensitive in most databases!`,
+        starterCode: `-- Get all employees in the Engineering department
+
+SELECT name, department, salary
+FROM employees
+WHERE department = 'Engineering';`,
+        solution: `SELECT name, department, salary FROM employees WHERE department = 'Engineering';`,
+        hint: "Text values must be in quotes (single or double)",
+      },
+      {
+        id: 4,
+        title: "Step 4: Multiple Conditions (AND/OR)",
+        explanation: `Combine conditions with <code>AND</code> or <code>OR</code>:
+
+<code>WHERE salary > 50000 AND department = 'Sales'</code>
+→ Both conditions must be true
+
+<code>WHERE department = 'Sales' OR department = 'Marketing'</code>
+→ Either condition can be true`,
+        starterCode: `-- Find high-earning engineers
+-- (Engineering AND salary > 70000)
+
+SELECT name, salary
+FROM employees
+WHERE department = 'Engineering'
+  AND salary > 70000;`,
+        solution: `SELECT name, salary FROM employees WHERE department = 'Engineering' AND salary > 70000;`,
+        hint: "AND means both conditions must be true",
+      },
+      {
+        id: 5,
+        title: "Step 5: Real Analytics - High-Value Sales",
+        explanation: `Let's answer a real business question:
+
+<strong>Question:</strong> "What are our high-value sales (over $500)?"
+
+This helps identify important transactions!`,
+        starterCode: `-- Find all sales over 500
+
+SELECT product, amount, date
+FROM sales
+WHERE amount > 500;`,
+        solution: `SELECT product, amount, date FROM sales WHERE amount > 500;`,
+        hint: "WHERE amount > 500 filters to show only high-value transactions",
+      },
+    ],
+  },
+  "9": {
+    title: "SQL Sorting & Limiting",
+    language: "sql",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: Sorting with ORDER BY",
+        explanation: `<code>ORDER BY</code> sorts your results!
+
+<code>ORDER BY column_name</code> sorts ascending (A-Z, 0-9)
+<code>ORDER BY column_name DESC</code> sorts descending (Z-A, 9-0)
+
+<strong>Syntax:</strong>
+<code>SELECT columns FROM table ORDER BY column;</code>`,
+        starterCode: `-- Get employees sorted by salary (lowest to highest)
+
+SELECT name, salary
+FROM employees
+ORDER BY salary;`,
+        solution: `SELECT name, salary FROM employees ORDER BY salary;`,
+        hint: "ORDER BY sorts the results - default is ascending (low to high)",
+      },
+      {
+        id: 2,
+        title: "Step 2: Descending Order",
+        explanation: `Add <code>DESC</code> after the column name to sort high to low.
+
+This is super useful for finding:
+- Highest salaries
+- Largest sales
+- Most recent dates
+
+<code>DESC</code> = descending order`,
+        starterCode: `-- Get employees sorted by salary (highest to lowest)
+
+SELECT name, salary
+FROM employees
+ORDER BY salary DESC;`,
+        solution: `SELECT name, salary FROM employees ORDER BY salary DESC;`,
+        hint: "DESC reverses the sort order to show highest values first",
+      },
+      {
+        id: 3,
+        title: "Step 3: Limiting Results",
+        explanation: `<code>LIMIT</code> restricts how many rows you get back.
+
+<code>LIMIT 5</code> → Get only the first 5 rows
+<code>LIMIT 10</code> → Get only the first 10 rows
+
+Combine with ORDER BY to get "Top N" results!`,
+        starterCode: `-- Get the top 3 highest-paid employees
+
+SELECT name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 3;`,
+        solution: `SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 3;`,
+        hint: "ORDER BY DESC + LIMIT = Top N results!",
+      },
+      {
+        id: 4,
+        title: "Step 4: Combining WHERE, ORDER BY, LIMIT",
+        explanation: `You can combine clauses! They go in this order:
+
+1. <code>SELECT</code> - what columns
+2. <code>FROM</code> - which table
+3. <code>WHERE</code> - filter rows
+4. <code>ORDER BY</code> - sort results
+5. <code>LIMIT</code> - restrict count
+
+This is the standard SQL query structure!`,
+        starterCode: `-- Top 5 sales from the Electronics category
+
+SELECT product, amount
+FROM sales
+WHERE category = 'Electronics'
+ORDER BY amount DESC
+LIMIT 5;`,
+        solution: `SELECT product, amount FROM sales WHERE category = 'Electronics' ORDER BY amount DESC LIMIT 5;`,
+        hint: "This query filters, sorts, and limits all in one!",
+      },
+      {
+        id: 5,
+        title: "Step 5: Real Analytics - Top Performers",
+        explanation: `Let's answer a real business question:
+
+<strong>Question:</strong> "Who are our top 3 highest earners in Sales?"
+
+This combines filtering (WHERE), sorting (ORDER BY), and limiting!`,
+        starterCode: `-- Top 3 earners in the Sales department
+
+SELECT name, salary
+FROM employees
+WHERE department = 'Sales'
+ORDER BY salary DESC
+LIMIT 3;`,
+        solution: `SELECT name, salary FROM employees WHERE department = 'Sales' ORDER BY salary DESC LIMIT 3;`,
+        hint: "This is a real analytics query - filter department, sort by salary, get top 3!",
+      },
+    ],
+  },
+  "10": {
+    title: "SQL Aggregations",
+    language: "sql",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: COUNT Function",
+        explanation: `Aggregate functions perform calculations on multiple rows!
+
+<code>COUNT(*)</code> counts how many rows you have.
+
+<strong>Example:</strong> Count total employees
+<code>SELECT COUNT(*) FROM employees;</code>
+
+This is fundamental to data analytics!`,
+        starterCode: `-- Count how many employees we have
+
+SELECT COUNT(*) FROM employees;`,
+        solution: `SELECT COUNT(*) FROM employees;`,
+        hint: "COUNT(*) counts all rows in the table",
+      },
+      {
+        id: 2,
+        title: "Step 2: SUM Function",
+        explanation: `<code>SUM(column)</code> adds up all values in a column.
+
+Perfect for calculating:
+- Total sales revenue
+- Total salary expense
+- Sum of all quantities
+
+<strong>Syntax:</strong> <code>SELECT SUM(column_name) FROM table;</code>`,
+        starterCode: `-- Calculate total sales revenue
+
+SELECT SUM(amount) FROM sales;`,
+        solution: `SELECT SUM(amount) FROM sales;`,
+        hint: "SUM adds up all the values in the amount column",
+      },
+      {
+        id: 3,
+        title: "Step 3: AVG, MIN, MAX Functions",
+        explanation: `More useful aggregate functions:
+
+- <code>AVG(column)</code> → average value
+- <code>MIN(column)</code> → smallest value
+- <code>MAX(column)</code> → largest value
+
+You can use multiple in one query!`,
+        starterCode: `-- Get salary statistics
+
+SELECT
+  AVG(salary) as avg_salary,
+  MIN(salary) as min_salary,
+  MAX(salary) as max_salary
+FROM employees;`,
+        solution: `SELECT AVG(salary), MIN(salary), MAX(salary) FROM employees;`,
+        hint: "'as' creates an alias (custom name) for the result column",
+      },
+      {
+        id: 4,
+        title: "Step 4: GROUP BY",
+        explanation: `<code>GROUP BY</code> groups rows by a column value, then aggregates each group!
+
+<strong>Example:</strong> Average salary by department
+<code>SELECT department, AVG(salary) FROM employees GROUP BY department;</code>
+
+This is POWERFUL for analytics!`,
+        starterCode: `-- Average salary by department
+
+SELECT
+  department,
+  AVG(salary) as avg_salary
+FROM employees
+GROUP BY department;`,
+        solution: `SELECT department, AVG(salary) FROM employees GROUP BY department;`,
+        hint: "GROUP BY creates separate calculations for each department",
+      },
+      {
+        id: 5,
+        title: "Step 5: Real Analytics - Sales Summary",
+        explanation: `Let's create a comprehensive sales analytics report!
+
+<strong>Question:</strong> "What's our total and average sales amount?"
+
+This is exactly what business analysts do!`,
+        starterCode: `-- Complete sales summary
+
+SELECT
+  COUNT(*) as total_sales,
+  SUM(amount) as total_revenue,
+  AVG(amount) as avg_sale,
+  MAX(amount) as highest_sale,
+  MIN(amount) as lowest_sale
+FROM sales;`,
+        solution: `SELECT COUNT(*) as total_sales, SUM(amount) as total_revenue, AVG(amount) as avg_sale, MAX(amount) as highest_sale, MIN(amount) as lowest_sale FROM sales;`,
+        hint: "This one query gives you 5 key metrics - powerful analytics in action!",
+      },
+    ],
+  },
 };
 
 export default function CodingLessonPage() {
