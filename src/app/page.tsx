@@ -14,52 +14,54 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Featured: Learn Coding */}
+        {/* Featured: Guided Projects - BEST WAY TO LEARN */}
         <div className="max-w-6xl mx-auto mb-12">
-          <div className="bg-gradient-to-r from-green-600 to-blue-600 p-8 rounded-lg shadow-lg text-white">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-8 rounded-lg shadow-lg text-white">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex-1">
-                <div className="text-5xl mb-4">👨‍💻</div>
+                <div className="text-5xl mb-4">🚀</div>
                 <h2 className="text-3xl font-bold mb-3">
-                  Never Coded Before? Start Here!
+                  Build Real Projects From Scratch!
                 </h2>
                 <p className="text-lg opacity-90 mb-4">
-                  Learn Python and SQL from absolute scratch with step-by-step interactive lessons.
-                  Each lesson guides you through writing your first lines of code with instant feedback.
+                  The BEST way to learn: Build complete analytics dashboards with step-by-step guidance.
+                  We EXPLAIN each concept → SHOW you how → Then YOU build it!
                 </p>
                 <div className="flex gap-3 flex-wrap">
                   <Link
-                    href="/learn-coding"
-                    className="bg-white text-green-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors inline-block"
+                    href="/guided-projects"
+                    className="bg-white text-purple-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors inline-block"
                   >
-                    Start Learning to Code
+                    Start Building Projects
                   </Link>
                   <Link
-                    href="/tools/code-playground"
+                    href="/learn-coding"
                     className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white/10 transition-colors inline-block"
                   >
-                    Code Playground
+                    Quick Lessons
                   </Link>
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
-                <div className="text-sm opacity-90 mb-3">Perfect for beginners:</div>
+                <div className="text-sm font-semibold mb-3">9 Complete Projects:</div>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>No prior experience needed</span>
+                    <span className="bg-green-500 w-2 h-2 rounded-full"></span>
+                    <span>3 Beginner</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>Step-by-step guidance</span>
+                    <span className="bg-yellow-500 w-2 h-2 rounded-full"></span>
+                    <span>3 Intermediate</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>Instant code execution</span>
+                    <span className="bg-red-500 w-2 h-2 rounded-full"></span>
+                    <span>3 Advanced</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span>✓</span>
-                    <span>Real analytics examples</span>
+                  <div className="mt-3 pt-3 border-t border-white/20">
+                    <div className="font-semibold">Learn by building:</div>
+                    <div>Sales Dashboards</div>
+                    <div>Analytics Systems</div>
+                    <div>Forecasting Tools</div>
                   </div>
                 </div>
               </div>
