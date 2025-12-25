@@ -2,6 +2,12 @@
 
 An interactive web application designed to teach data analytics from scratch. Built with Next.js, TypeScript, and Tailwind CSS.
 
+## 🚀 Live Demo
+
+**[https://learn-data-analytics.vercel.app](https://learn-data-analytics.vercel.app)**
+
+Experience the full platform with interactive lessons, guided projects, and hands-on tools!
+
 ## Overview
 
 Learn Data Analytics is a comprehensive educational platform that helps users master data analytics through:
