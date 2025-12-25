@@ -17,7 +17,7 @@ const projects = [
       "Group customers based on purchasing behavior and demographics",
     difficulty: "Intermediate",
     dataset: "Customer Database",
-    href: null,
+    href: "/projects/2",
   },
   {
     id: 3,
