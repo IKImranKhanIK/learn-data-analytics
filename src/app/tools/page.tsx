@@ -27,7 +27,7 @@ const tools = [
     name: "Data Cleaner",
     description: "Practice cleaning messy datasets",
     icon: "🧹",
-    href: null,
+    href: "/tools/data-cleaner",
   },
 ];
 
