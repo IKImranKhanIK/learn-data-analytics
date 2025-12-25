@@ -41,6 +41,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/exercises"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  Exercises
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/projects"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
@@ -74,6 +82,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/tools/code-playground"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  Code Playground
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tools/data-explorer"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
@@ -86,14 +102,6 @@ export default function Footer() {
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   Chart Builder
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/statistics"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >
-                  Statistics Calculator
                 </Link>
               </li>
             </ul>

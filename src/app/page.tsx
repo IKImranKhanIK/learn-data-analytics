@@ -14,14 +14,54 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Featured: Code Playground */}
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-lg shadow-lg text-white">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex-1">
+                <div className="text-5xl mb-4">💻</div>
+                <h2 className="text-3xl font-bold mb-3">
+                  New: Code Playground
+                </h2>
+                <p className="text-lg opacity-90 mb-4">
+                  Write and execute Python, SQL, and JavaScript code directly in your browser.
+                  Practice with real coding exercises and instant feedback.
+                </p>
+                <div className="flex gap-3 flex-wrap">
+                  <Link
+                    href="/tools/code-playground"
+                    className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors inline-block"
+                  >
+                    Try Code Playground
+                  </Link>
+                  <Link
+                    href="/exercises"
+                    className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white/10 transition-colors inline-block"
+                  >
+                    View Exercises
+                  </Link>
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
+                <div className="text-sm opacity-90 mb-2">Supported Languages:</div>
+                <div className="flex gap-3">
+                  <span className="bg-white/20 px-3 py-1 rounded text-sm font-semibold">Python</span>
+                  <span className="bg-white/20 px-3 py-1 rounded text-sm font-semibold">SQL</span>
+                  <span className="bg-white/20 px-3 py-1 rounded text-sm font-semibold">JavaScript</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">
-              Fundamentals
+              📚 Interactive Lessons
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               Learn the basics of data analysis, statistics, and data
-              visualization
+              visualization through structured lessons
             </p>
             <Link
               href="/lessons"
@@ -33,10 +73,11 @@ export default function Home() {
 
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">
-              Interactive Tools
+              🛠️ Powerful Tools
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Practice with interactive data visualization and analysis tools
+              Practice with interactive data visualization, analysis tools,
+              and a full code playground
             </p>
             <Link
               href="/tools"
@@ -48,10 +89,11 @@ export default function Home() {
 
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">
-              Real Projects
+              🎯 Real Projects
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Apply your skills with real-world datasets and projects
+              Apply your skills with real-world datasets and comprehensive
+              analytics projects
             </p>
             <Link
               href="/projects"

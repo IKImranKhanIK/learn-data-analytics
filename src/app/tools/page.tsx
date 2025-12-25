@@ -3,27 +3,34 @@ import Link from "next/link";
 const tools = [
   {
     id: 1,
+    name: "Code Playground",
+    description: "Write and execute Python, SQL, and JavaScript code in your browser",
+    icon: "💻",
+    href: "/tools/code-playground",
+  },
+  {
+    id: 2,
     name: "Data Table Explorer",
     description: "Upload and explore datasets with sorting and filtering",
     icon: "📊",
     href: "/tools/data-explorer",
   },
   {
-    id: 2,
+    id: 3,
     name: "Chart Builder",
     description: "Create interactive charts and visualizations",
     icon: "📈",
     href: "/tools/chart-builder",
   },
   {
-    id: 3,
+    id: 4,
     name: "Statistics Calculator",
     description: "Calculate mean, median, standard deviation, and more",
     icon: "🧮",
     href: "/tools/statistics",
   },
   {
-    id: 4,
+    id: 5,
     name: "Data Cleaner",
     description: "Practice cleaning messy datasets",
     icon: "🧹",
