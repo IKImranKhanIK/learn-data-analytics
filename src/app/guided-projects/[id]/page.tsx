@@ -4792,6 +4792,7 @@ export default function GuidedProjectPage() {
               <div className="h-96">
                 {editorMounted ? (
                   <Editor
+                    key={`editor-${currentSection}`}
                     height="100%"
                     language="python"
                     value={code}
@@ -4809,6 +4810,16 @@ export default function GuidedProjectPage() {
                         Loading editor...
                       </div>
                     }
+                    onMount={() => {
+                      // Suppress Monaco Editor's "Canceled" errors
+                      const originalError = console.error;
+                      console.error = (...args) => {
+                        if (args[0]?.includes?.('Canceled') || args[0]?.message?.includes?.('Canceled')) {
+                          return;
+                        }
+                        originalError(...args);
+                      };
+                    }}
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full bg-gray-900 text-gray-400">

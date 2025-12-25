@@ -1622,6 +1622,7 @@ export default function CodingLessonPage() {
               <div className="h-64">
                 {editorMounted ? (
                   <Editor
+                    key={`editor-${lessonId}-${currentStep}`}
                     height="100%"
                     language={lesson.language}
                     value={code}
@@ -1639,6 +1640,16 @@ export default function CodingLessonPage() {
                         Loading editor...
                       </div>
                     }
+                    onMount={() => {
+                      // Suppress Monaco Editor's "Canceled" errors
+                      const originalError = console.error;
+                      console.error = (...args) => {
+                        if (args[0]?.includes?.('Canceled') || args[0]?.message?.includes?.('Canceled')) {
+                          return;
+                        }
+                        originalError(...args);
+                      };
+                    }}
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full bg-gray-900 text-gray-400">
