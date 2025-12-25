@@ -269,6 +269,327 @@ print("Number of months: 3")`,
       },
     ],
   },
+  "3": {
+    title: "Working with Lists",
+    language: "python",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: What is a List?",
+        explanation: `A <strong>list</strong> is a way to store multiple values in one variable.
+
+Instead of:
+<code>sale1 = 1200</code>
+<code>sale2 = 1500</code>
+<code>sale3 = 1800</code>
+
+You can use:
+<code>sales = [1200, 1500, 1800]</code>
+
+Lists use square brackets <code>[]</code> and commas to separate values.`,
+        starterCode: `# Create a list of sales numbers
+sales = [1200, 1500, 1800, 1350, 1900]
+
+# Print the entire list
+print(sales)
+
+# This is much better than 5 separate variables!
+`,
+        solution: `sales = [1200, 1500, 1800, 1350, 1900]
+print(sales)`,
+        hint: "Run the code to see how a list looks!",
+      },
+      {
+        id: 2,
+        title: "Step 2: Accessing List Items",
+        explanation: `You can get individual items from a list using their <strong>index</strong>.
+
+<strong>Important:</strong> Python counts from 0, not 1!
+- First item: <code>sales[0]</code>
+- Second item: <code>sales[1]</code>
+- Third item: <code>sales[2]</code>
+
+This is called "zero-based indexing."`,
+        starterCode: `sales = [1200, 1500, 1800]
+
+# Get the first sale (index 0)
+first_sale = sales[0]
+print(f"First sale: \${first_sale}")
+
+# Get the second sale (index 1)
+second_sale = sales[1]
+print(f"Second sale: \${second_sale}")
+`,
+        solution: `sales = [1200, 1500, 1800]
+first_sale = sales[0]
+print(f"First sale: \${first_sale}")
+second_sale = sales[1]
+print(f"Second sale: \${second_sale}")`,
+        hint: "Remember: Python starts counting at 0!",
+      },
+      {
+        id: 3,
+        title: "Step 3: List Length",
+        explanation: `Use <code>len()</code> to find how many items are in a list.
+
+This is super useful in data analytics when you need to know:
+- How many sales you have
+- How many customers
+- How many data points
+
+<code>len(sales)</code> returns the count.`,
+        starterCode: `sales = [1200, 1500, 1800, 1350, 1900]
+
+# Count how many sales we have
+count = len(sales)
+
+print(f"We have {count} sales")
+`,
+        solution: `sales = [1200, 1500, 1800, 1350, 1900]
+count = len(sales)
+print(f"We have \${count} sales")`,
+        hint: "len() stands for 'length' - it counts the items!",
+      },
+      {
+        id: 4,
+        title: "Step 4: List Math",
+        explanation: `Python has built-in functions for list math:
+
+- <code>sum()</code> - adds all numbers
+- <code>max()</code> - finds the highest
+- <code>min()</code> - finds the lowest
+
+These are PERFECT for data analytics!`,
+        starterCode: `sales = [1200, 1500, 1800, 1350, 1900]
+
+# Calculate total using sum()
+total = sum(sales)
+
+# Find highest and lowest
+highest = max(sales)
+lowest = min(sales)
+
+print(f"Total: \${total}")
+print(f"Highest: \${highest}")
+print(f"Lowest: \${lowest}")
+`,
+        solution: `sales = [1200, 1500, 1800, 1350, 1900]
+total = sum(sales)
+highest = max(sales)
+lowest = min(sales)
+print(f"Total: \${total}")
+print(f"Highest: \${highest}")
+print(f"Lowest: \${lowest}")`,
+        hint: "sum(), max(), and min() are your data analytics best friends!",
+      },
+      {
+        id: 5,
+        title: "Step 5: Calculate Analytics from a List",
+        explanation: `Now let's combine everything to create a complete analytics report from a list!
+
+You'll calculate:
+- Total sales
+- Average sales
+- Highest and lowest
+- Number of sales
+
+This is real data analytics!`,
+        starterCode: `# Monthly sales data
+monthly_sales = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1750]
+
+# Your task: Calculate these metrics
+total = sum(monthly_sales)
+average = total / len(monthly_sales)
+highest = max(monthly_sales)
+lowest = min(monthly_sales)
+count = len(monthly_sales)
+
+# Print the report
+print("=== Sales Analytics Report ===")
+print(f"Total Sales: \${total}")
+print(f"Average Sales: \${average:.2f}")
+print(f"Highest Month: \${highest}")
+print(f"Lowest Month: \${lowest}")
+print(f"Number of Months: {count}")
+`,
+        solution: `monthly_sales = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1750]
+total = sum(monthly_sales)
+average = total / len(monthly_sales)
+highest = max(monthly_sales)
+lowest = min(monthly_sales)
+count = len(monthly_sales)
+print("=== Sales Analytics Report ===")
+print(f"Total Sales: \${total}")
+print(f"Average Sales: \${average:.2f}")
+print(f"Highest Month: \${highest}")
+print(f"Lowest Month: \${lowest}")
+print(f"Number of Months: \${count}")`,
+        hint: "The code is complete! Run it to see a real analytics report.",
+      },
+    ],
+  },
+  "4": {
+    title: "Loops - Automate Repetitive Tasks",
+    language: "python",
+    steps: [
+      {
+        id: 1,
+        title: "Step 1: Why Loops?",
+        explanation: `Imagine you have 1000 sales to print. You wouldn't write:
+<code>print(sale1)</code>
+<code>print(sale2)</code>
+...1000 times!
+
+<strong>Loops</strong> let you repeat actions automatically.
+
+The <code>for</code> loop goes through each item in a list.`,
+        starterCode: `# List of sales
+sales = [1200, 1500, 1800]
+
+# Loop through each sale and print it
+for sale in sales:
+    print(f"Sale amount: \${sale}")
+
+# Much better than 3 print statements!
+`,
+        solution: `sales = [1200, 1500, 1800]
+for sale in sales:
+    print(f"Sale amount: \${sale}")`,
+        hint: "'for sale in sales' means: for each item (we'll call it 'sale') in the sales list",
+      },
+      {
+        id: 2,
+        title: "Step 2: Loop with Counter",
+        explanation: `You can count which iteration you're on using <code>enumerate()</code>.
+
+<code>enumerate()</code> gives you two things:
+1. The index (position)
+2. The value
+
+This is great for numbering your output!`,
+        starterCode: `sales = [1200, 1500, 1800, 1350]
+
+# Loop with index and value
+for index, sale in enumerate(sales):
+    # index starts at 0, so add 1 for display
+    month_number = index + 1
+    print(f"Month {month_number}: \${sale}")
+`,
+        solution: `sales = [1200, 1500, 1800, 1350]
+for index, sale in enumerate(sales):
+    month_number = index + 1
+    print(f"Month \${month_number}: \${sale}")`,
+        hint: "enumerate() gives you both the position and the value!",
+      },
+      {
+        id: 3,
+        title: "Step 3: Calculating in Loops",
+        explanation: `You can do calculations inside loops!
+
+Common pattern:
+1. Start with a total of 0
+2. Loop through items
+3. Add each item to the total
+
+This is how you'd process thousands of sales records.`,
+        starterCode: `sales = [1200, 1500, 1800, 1350, 1900]
+
+# Start with 0
+running_total = 0
+
+# Add each sale to the running total
+for sale in sales:
+    running_total = running_total + sale
+    print(f"Added \${sale}, total now: \${running_total}")
+
+print(f"\\nFinal total: \${running_total}")
+`,
+        solution: `sales = [1200, 1500, 1800, 1350, 1900]
+running_total = 0
+for sale in sales:
+    running_total = running_total + sale
+    print(f"Added \${sale}, total now: \${running_total}")
+print(f"\\nFinal total: \${running_total}")`,
+        hint: "Watch the running total grow with each sale!",
+      },
+      {
+        id: 4,
+        title: "Step 4: Filtering with Loops",
+        explanation: `You can use loops to filter data - only process items that meet a condition.
+
+Let's find all sales over $1500!
+
+We'll use:
+- A loop to go through all sales
+- An <code>if</code> statement to check each one`,
+        starterCode: `sales = [1200, 1500, 1800, 1350, 1900, 1650]
+
+print("Sales over $1500:")
+
+# Loop through and only print high sales
+for sale in sales:
+    if sale > 1500:
+        print(f"  \${sale}")
+`,
+        solution: `sales = [1200, 1500, 1800, 1350, 1900, 1650]
+print("Sales over $1500:")
+for sale in sales:
+    if sale > 1500:
+        print(f"  \${sale}")`,
+        hint: "The if statement filters - it only runs for sales > 1500!",
+      },
+      {
+        id: 5,
+        title: "Step 5: Real Analytics with Loops",
+        explanation: `Let's use loops to analyze sales data and categorize performance!
+
+We'll:
+- Count how many sales are in different ranges
+- Calculate percentages
+- Show insights
+
+This is what data analysts do!`,
+        starterCode: `sales = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1750, 1400]
+
+low_sales = 0    # Under $1500
+medium_sales = 0  # $1500-$1800
+high_sales = 0    # Over $1800
+
+for sale in sales:
+    if sale < 1500:
+        low_sales = low_sales + 1
+    elif sale <= 1800:
+        medium_sales = medium_sales + 1
+    else:
+        high_sales = high_sales + 1
+
+total_count = len(sales)
+
+print("=== Sales Performance Analysis ===")
+print(f"Low sales (<$1500): {low_sales} ({low_sales/total_count*100:.1f}%)")
+print(f"Medium sales ($1500-$1800): {medium_sales} ({medium_sales/total_count*100:.1f}%)")
+print(f"High sales (>$1800): {high_sales} ({high_sales/total_count*100:.1f}%)")
+`,
+        solution: `sales = [1200, 1500, 1800, 1350, 1900, 1650, 2100, 1750, 1400]
+low_sales = 0
+medium_sales = 0
+high_sales = 0
+for sale in sales:
+    if sale < 1500:
+        low_sales = low_sales + 1
+    elif sale <= 1800:
+        medium_sales = medium_sales + 1
+    else:
+        high_sales = high_sales + 1
+total_count = len(sales)
+print("=== Sales Performance Analysis ===")
+print(f"Low sales (<$1500): \${low_sales} (\${low_sales/total_count*100:.1f}%)")
+print(f"Medium sales ($1500-$1800): \${medium_sales} (\${medium_sales/total_count*100:.1f}%)")
+print(f"High sales (>$1800): \${high_sales} (\${high_sales/total_count*100:.1f}%)")`,
+        hint: "This is real data categorization! Run it to see the analysis.",
+      },
+    ],
+  },
 };
 
 export default function CodingLessonPage() {
