@@ -164,7 +164,7 @@ export default function Footer() {
               <p className="text-xs text-gray-500 dark:text-gray-500">
                 Built with ❤️ by{" "}
                 <a
-                  href="https://github.com/IKImranKhanIK"
+                  href="https://www.linkedin.com/in/imran-khan-728077130/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 dark:text-blue-400 hover:underline"
