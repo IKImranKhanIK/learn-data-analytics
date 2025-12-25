@@ -27,10 +27,10 @@ sales = [1200, 1500, 1800, 1350, 1900, 1650]
 # Your code here
 average = 0
 
-print(f"Average sales: ${average}")`,
+print(f"Average sales: \${average}")`,
     solution: `sales = [1200, 1500, 1800, 1350, 1900, 1650]
 average = sum(sales) / len(sales)
-print(f"Average sales: ${average:.2f}")`,
+print(f"Average sales: \${average:.2f}")`,
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ products = [
 expensive_products = []
 
 for product in expensive_products:
-    print(f"{product['name']}: ${product['price']}")`,
+    print(f"\${product['name']}: \${product['price']}")`,
     solution: `products = [
     {"name": "Mouse", "price": 29},
     {"name": "Keyboard", "price": 79},
@@ -60,7 +60,7 @@ for product in expensive_products:
 expensive_products = [p for p in products if p['price'] > 100]
 
 for product in expensive_products:
-    print(f"{product['name']}: ${product['price']}")`,
+    print(f"\${product['name']}: \${product['price']}")`,
   },
   {
     id: 3,
@@ -97,17 +97,17 @@ clean_data = []
 # Calculate min, max, and average
 # Your code here
 
-print(f"Clean data: {clean_data}")
-print(f"Count: {len(clean_data)}")`,
+print(f"Clean data: \${clean_data}")
+print(f"Count: \${len(clean_data)}")`,
     solution: `data = [45, None, 67, 89, None, 23, 56, 78, None, 90]
 
 clean_data = [x for x in data if x is not None]
 
-print(f"Clean data: {clean_data}")
-print(f"Count: {len(clean_data)}")
-print(f"Min: {min(clean_data)}")
-print(f"Max: {max(clean_data)}")
-print(f"Average: {sum(clean_data) / len(clean_data):.2f}")`,
+print(f"Clean data: \${clean_data}")
+print(f"Count: \${len(clean_data)}")
+print(f"Min: \${min(clean_data)}")
+print(f"Max: \${max(clean_data)}")
+print(f"Average: \${sum(clean_data) / len(clean_data):.2f}")`,
   },
 ];
 
@@ -135,10 +135,10 @@ average_sales = total_sales / len(sales_data)
 max_sales = max(sales_data)
 min_sales = min(sales_data)
 
-print(f"Total Sales: ${total_sales}")
-print(f"Average Sales: ${average_sales:.2f}")
-print(f"Maximum Sale: ${max_sales}")
-print(f"Minimum Sale: ${min_sales}")
+print(f"Total Sales: \${total_sales}")
+print(f"Average Sales: \${average_sales:.2f}")
+print(f"Maximum Sale: \${max_sales}")
+print(f"Minimum Sale: \${min_sales}")
 
 # Try your own analysis below:
 `,
