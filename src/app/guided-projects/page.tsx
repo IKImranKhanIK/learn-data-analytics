@@ -97,28 +97,28 @@ const projects: Project[] = [
 export default function GuidedProjectsPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <Link
             href="/"
-            className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
+            className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block text-sm sm:text-base"
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Guided Projects - Build Real Things
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-6">
             Learn by building complete analytics projects from scratch with step-by-step guidance
           </p>
 
           {/* How It Works */}
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 border-l-4 border-green-500 p-6 rounded-lg">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 border-l-4 border-green-500 p-4 sm:p-6 rounded-lg">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4">
               📚 How These Projects Work
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <div>
                 <div className="text-3xl mb-2">📖</div>
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
@@ -157,14 +157,14 @@ export default function GuidedProjectsPage() {
         </div>
 
         {/* Beginner Projects */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-            <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full text-lg">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+            <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base lg:text-lg">
               Beginner
             </span>
-            Start Here - Build Your First Projects
+            <span className="text-base sm:text-xl lg:text-2xl">Start Here - Build Your First Projects</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects
               .filter((p) => p.difficulty === "Beginner")
               .map((project) => (
@@ -174,14 +174,14 @@ export default function GuidedProjectsPage() {
         </div>
 
         {/* Intermediate Projects */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-            <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-4 py-2 rounded-full text-lg">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+            <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base lg:text-lg">
               Intermediate
             </span>
-            Level Up Your Skills
+            <span className="text-base sm:text-xl lg:text-2xl">Level Up Your Skills</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects
               .filter((p) => p.difficulty === "Intermediate")
               .map((project) => (
@@ -191,14 +191,14 @@ export default function GuidedProjectsPage() {
         </div>
 
         {/* Advanced Projects */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-            <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-4 py-2 rounded-full text-lg">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+            <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base lg:text-lg">
               Advanced
             </span>
-            Master Real-World Scenarios
+            <span className="text-base sm:text-xl lg:text-2xl">Master Real-World Scenarios</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects
               .filter((p) => p.difficulty === "Advanced")
               .map((project) => (
@@ -215,11 +215,11 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/guided-projects/${project.id}`}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-blue-500"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-all p-4 sm:p-6 border-2 border-transparent hover:border-blue-500"
     >
       <div className="flex items-start justify-between mb-3">
         <span
-          className={`text-xs px-3 py-1 rounded-full font-semibold ${
+          className={`text-xs px-2 sm:px-3 py-1 rounded-full font-semibold ${
             project.difficulty === "Beginner"
               ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"
               : project.difficulty === "Intermediate"
@@ -234,7 +234,7 @@ function ProjectCard({ project }: { project: Project }) {
         </span>
       </div>
 
-      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+      <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
         {project.title}
       </h3>
 

@@ -3,26 +3,26 @@ import Link from "next/link";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-4xl">
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             About Learn Data Analytics
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
             Your journey to mastering data analytics starts here
           </p>
         </div>
 
         {/* Creator Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-lg shadow-lg mb-8">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 sm:p-8 rounded-lg shadow-lg mb-6 sm:mb-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-4xl font-bold border-4 border-white/30">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl sm:text-4xl font-bold border-4 border-white/30">
               IK
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl font-bold mb-2">Built by Imran Khan</h2>
-              <p className="text-lg opacity-90 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">Built by Imran Khan</h2>
+              <p className="text-base sm:text-lg opacity-90 mb-4">
                 Data analytics educator passionate about making learning accessible and practical
               </p>
               <div className="flex gap-4 justify-center md:justify-start">
@@ -72,22 +72,22 @@ export default function AboutPage() {
         </div>
 
         {/* Platform Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">10</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Interactive Coding Lessons</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md text-center">
+            <div className="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">10</div>
+            <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Interactive Coding Lessons</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
-            <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">9</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Guided Projects</div>
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md text-center">
+            <div className="text-3xl sm:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">9</div>
+            <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Guided Projects</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
-            <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">5</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Interactive Tools</div>
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md text-center">
+            <div className="text-3xl sm:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">5</div>
+            <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Interactive Tools</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center">
-            <div className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">100%</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Free & Open Source</div>
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md text-center">
+            <div className="text-3xl sm:text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">100%</div>
+            <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Free & Open Source</div>
           </div>
         </div>
 
