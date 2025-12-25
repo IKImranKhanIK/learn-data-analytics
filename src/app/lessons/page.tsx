@@ -8,6 +8,7 @@ const lessons = [
       "Learn what data analytics is, its importance, and key concepts",
     duration: "15 min",
     level: "Beginner",
+    href: "/lessons/1",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const lessons = [
       "Explore different types of data: categorical, numerical, ordinal, and more",
     duration: "20 min",
     level: "Beginner",
+    href: "/lessons/2",
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ const lessons = [
     description: "Learn various techniques for collecting and sourcing data",
     duration: "25 min",
     level: "Beginner",
+    href: null,
   },
   {
     id: 4,
@@ -31,6 +34,7 @@ const lessons = [
       "Master the essential skills for cleaning and preparing data for analysis",
     duration: "30 min",
     level: "Intermediate",
+    href: null,
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const lessons = [
     description: "Understand mean, median, mode, variance, and other key metrics",
     duration: "35 min",
     level: "Intermediate",
+    href: null,
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const lessons = [
       "Learn to create effective charts and graphs to communicate insights",
     duration: "40 min",
     level: "Intermediate",
+    href: null,
   },
 ];
 
@@ -89,9 +95,21 @@ export default function LessonsPage() {
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   {lesson.duration}
                 </span>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors">
-                  Start Lesson
-                </button>
+                {lesson.href ? (
+                  <Link
+                    href={lesson.href}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors"
+                  >
+                    Start Lesson
+                  </Link>
+                ) : (
+                  <button
+                    disabled
+                    className="bg-gray-400 text-white px-4 py-2 rounded-md cursor-not-allowed"
+                  >
+                    Coming Soon
+                  </button>
+                )}
               </div>
             </div>
           ))}

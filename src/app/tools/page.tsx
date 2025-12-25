@@ -6,24 +6,28 @@ const tools = [
     name: "Data Table Explorer",
     description: "Upload and explore datasets with sorting and filtering",
     icon: "📊",
+    href: null,
   },
   {
     id: 2,
     name: "Chart Builder",
     description: "Create interactive charts and visualizations",
     icon: "📈",
+    href: "/tools/chart-builder",
   },
   {
     id: 3,
     name: "Statistics Calculator",
     description: "Calculate mean, median, standard deviation, and more",
     icon: "🧮",
+    href: "/tools/statistics",
   },
   {
     id: 4,
     name: "Data Cleaner",
     description: "Practice cleaning messy datasets",
     icon: "🧹",
+    href: null,
   },
 ];
 
@@ -59,9 +63,21 @@ export default function ToolsPage() {
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 {tool.description}
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors">
-                Launch Tool
-              </button>
+              {tool.href ? (
+                <Link
+                  href={tool.href}
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors"
+                >
+                  Launch Tool
+                </Link>
+              ) : (
+                <button
+                  disabled
+                  className="bg-gray-400 text-white px-6 py-2 rounded-md cursor-not-allowed"
+                >
+                  Coming Soon
+                </button>
+              )}
             </div>
           ))}
         </div>
