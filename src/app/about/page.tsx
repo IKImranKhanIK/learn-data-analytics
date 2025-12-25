@@ -23,7 +23,7 @@ export default function AboutPage() {
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2">Built by Imran Khan</h2>
               <p className="text-base sm:text-lg opacity-90 mb-4">
-                Data analytics educator passionate about making learning accessible and practical
+                Data analytics student passionate about making learning accessible and practical
               </p>
               <div className="flex gap-4 justify-center md:justify-start">
                 <a
