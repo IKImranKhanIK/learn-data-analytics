@@ -42,7 +42,7 @@ const lessons = [
     description: "Understand mean, median, mode, variance, and other key metrics",
     duration: "35 min",
     level: "Intermediate",
-    href: null,
+    href: "/lessons/5",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const lessons = [
       "Learn to create effective charts and graphs to communicate insights",
     duration: "40 min",
     level: "Intermediate",
-    href: null,
+    href: "/lessons/6",
   },
 ];
 
