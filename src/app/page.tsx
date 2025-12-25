@@ -14,6 +14,100 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Why Data Analytics Section */}
+        <div className="max-w-6xl mx-auto mb-8 sm:mb-12">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8 border-2 border-blue-100 dark:border-blue-900">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                Why Become a Data Analyst?
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
+                Data analysts are the bridge between raw data and business decisions
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              {/* What Data Analysts Do */}
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                  <span className="text-2xl">👨‍💼</span>
+                  What Data Analysts Do
+                </h3>
+                <ul className="space-y-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 dark:text-blue-400 mt-1">▸</span>
+                    <span><strong>Collect & Clean Data:</strong> Gather data from databases, APIs, and spreadsheets, then prepare it for analysis</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 dark:text-blue-400 mt-1">▸</span>
+                    <span><strong>Analyze Trends:</strong> Identify patterns, anomalies, and insights using statistical methods</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 dark:text-blue-400 mt-1">▸</span>
+                    <span><strong>Create Visualizations:</strong> Build dashboards and charts that tell compelling data stories</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-600 dark:text-blue-400 mt-1">▸</span>
+                    <span><strong>Drive Decisions:</strong> Present findings to stakeholders and recommend actionable strategies</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Why They're Needed */}
+              <div className="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/20 dark:to-teal-900/20 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                  <span className="text-2xl">🎯</span>
+                  Why Every Business Needs Them
+                </h3>
+                <ul className="space-y-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span><strong>Data-Driven Decisions:</strong> Companies with data analysts make smarter, faster business decisions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span><strong>Cost Savings:</strong> Identify inefficiencies and optimize operations worth millions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span><strong>Competitive Edge:</strong> Understand customers better than competitors through data insights</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                    <span><strong>Growth & Revenue:</strong> Uncover new opportunities and revenue streams hidden in data</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Career Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-6 rounded-lg">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">2.7M+</div>
+                <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">Job Openings Globally</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">$75K+</div>
+                <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">Average Starting Salary</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">23%</div>
+                <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">Projected Growth (2023-2033)</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">#3</div>
+                <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">Best Job in America 2024</div>
+              </div>
+            </div>
+
+            <div className="mt-6 text-center">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 italic">
+                "Data Analyst" ranked as one of the most in-demand tech jobs with excellent work-life balance and remote opportunities
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Featured: Guided Projects - BEST WAY TO LEARN */}
         <div className="max-w-6xl mx-auto mb-8 sm:mb-12">
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-6 sm:p-8 rounded-lg shadow-lg text-white">
