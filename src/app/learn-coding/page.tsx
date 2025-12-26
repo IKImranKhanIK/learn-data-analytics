@@ -95,34 +95,34 @@ export default function LearnCodingPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <Link
             href="/"
-            className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
+            className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block text-sm sm:text-base"
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Learn to Code for Data Analytics
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
             Step-by-step coding lessons designed for complete beginners
           </p>
 
           {/* Info Banner */}
-          <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-6 rounded-lg">
-            <div className="flex items-start gap-4">
-              <div className="text-3xl">👋</div>
+          <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-4 sm:p-6 rounded-lg">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="text-2xl sm:text-3xl">👋</div>
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">
                   Never Coded Before? Perfect!
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
+                <p className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm mb-2 sm:mb-3">
                   These lessons are designed for absolute beginners. Each lesson:
                 </p>
-                <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+                <ul className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 space-y-1">
                   <li>✓ Explains concepts in plain English</li>
                   <li>✓ Shows you exactly what to type</li>
                   <li>✓ Lets you practice immediately</li>
@@ -135,10 +135,10 @@ export default function LearnCodingPage() {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex gap-2 mb-8 flex-wrap">
+        <div className="flex gap-2 mb-6 sm:mb-8 flex-wrap">
           <button
             onClick={() => setFilter("all")}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${
+            className={`px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base font-medium transition-colors ${
               filter === "all"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
@@ -148,7 +148,7 @@ export default function LearnCodingPage() {
           </button>
           <button
             onClick={() => setFilter("python")}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${
+            className={`px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base font-medium transition-colors ${
               filter === "python"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
@@ -158,7 +158,7 @@ export default function LearnCodingPage() {
           </button>
           <button
             onClick={() => setFilter("sql")}
-            className={`px-4 py-2 rounded-md font-medium transition-colors ${
+            className={`px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base font-medium transition-colors ${
               filter === "sql"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
@@ -169,15 +169,15 @@ export default function LearnCodingPage() {
         </div>
 
         {/* Lessons Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {filteredLessons.map((lesson, index) => (
             <Link
               key={lesson.id}
               href={`/learn-coding/${lesson.id}`}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all p-6 border-2 border-transparent hover:border-blue-500"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all p-4 sm:p-6 border-2 border-transparent hover:border-blue-500"
             >
-              <div className="flex items-start justify-between mb-3">
-                <div className="text-3xl">
+              <div className="flex items-start justify-between mb-2 sm:mb-3">
+                <div className="text-2xl sm:text-3xl">
                   {lesson.language === "python" ? "🐍" : "🗄️"}
                 </div>
                 <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full font-semibold">
@@ -185,11 +185,11 @@ export default function LearnCodingPage() {
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {lesson.title}
               </h3>
 
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">
                 {lesson.description}
               </p>
 
@@ -212,14 +212,14 @@ export default function LearnCodingPage() {
         </div>
 
         {/* Why Learn to Code Section */}
-        <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-8 rounded-lg">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-4 sm:p-6 lg:p-8 rounded-lg">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             Why Learn Coding for Data Analytics?
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                <span className="text-2xl">🚀</span>
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 flex items-center gap-2">
+                <span className="text-xl sm:text-2xl">🚀</span>
                 Automate Your Work
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -229,8 +229,8 @@ export default function LearnCodingPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                <span className="text-2xl">📊</span>
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 flex items-center gap-2">
+                <span className="text-xl sm:text-2xl">📊</span>
                 Handle Big Data
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -240,8 +240,8 @@ export default function LearnCodingPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                <span className="text-2xl">💼</span>
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 flex items-center gap-2">
+                <span className="text-xl sm:text-2xl">💼</span>
                 Career Opportunities
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -251,8 +251,8 @@ export default function LearnCodingPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                <span className="text-2xl">🎯</span>
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 flex items-center gap-2">
+                <span className="text-xl sm:text-2xl">🎯</span>
                 Advanced Analysis
               </h3>
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -264,14 +264,14 @@ export default function LearnCodingPage() {
         </div>
 
         {/* What You'll Learn */}
-        <div className="mt-12 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="mt-8 sm:mt-12 bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             What You'll Learn
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <span className="text-2xl">🐍</span>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <span className="text-xl sm:text-2xl">🐍</span>
                 Python for Data Analytics
               </h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
@@ -303,8 +303,8 @@ export default function LearnCodingPage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <span className="text-2xl">🗄️</span>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <span className="text-xl sm:text-2xl">🗄️</span>
                 SQL for Databases
               </h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">

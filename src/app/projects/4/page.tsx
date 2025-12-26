@@ -46,8 +46,8 @@ export default function FinancialDashboardProject() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16 max-w-7xl">
-        <div className="mb-8">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-7xl">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/projects"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
@@ -62,55 +62,55 @@ export default function FinancialDashboardProject() {
               Project 4
             </span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Financial Performance Dashboard
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
             Comprehensive financial analysis tracking revenue, expenses, and key performance indicators
           </p>
         </div>
 
         {/* KPI Cards */}
         <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-lg shadow-lg text-white">
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 sm:p-6 rounded-lg shadow-lg text-white">
             <div className="text-sm opacity-90 mb-2">Revenue</div>
-            <div className="text-2xl font-bold mb-1">
+            <div className="text-xl sm:text-2xl font-bold mb-1">
               ${(financialData.kpis.revenue / 1000000).toFixed(2)}M
             </div>
             <div className="text-xs opacity-75">↑ {financialData.kpis.revenueGrowth}% QoQ</div>
           </div>
 
-          <div className="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-lg shadow-lg text-white">
+          <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 sm:p-6 rounded-lg shadow-lg text-white">
             <div className="text-sm opacity-90 mb-2">Net Profit</div>
-            <div className="text-2xl font-bold mb-1">
+            <div className="text-xl sm:text-2xl font-bold mb-1">
               ${(financialData.kpis.netProfit / 1000).toFixed(0)}K
             </div>
             <div className="text-xs opacity-75">Margin: {financialData.kpis.profitMargin}%</div>
           </div>
 
-          <div className="bg-gradient-to-br from-red-500 to-red-600 p-6 rounded-lg shadow-lg text-white">
+          <div className="bg-gradient-to-br from-red-500 to-red-600 p-4 sm:p-6 rounded-lg shadow-lg text-white">
             <div className="text-sm opacity-90 mb-2">Expenses</div>
-            <div className="text-2xl font-bold mb-1">
+            <div className="text-xl sm:text-2xl font-bold mb-1">
               ${(financialData.kpis.expenses / 1000000).toFixed(2)}M
             </div>
             <div className="text-xs opacity-75">67.4% of revenue</div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-lg shadow-lg text-white">
+          <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-4 sm:p-6 rounded-lg shadow-lg text-white">
             <div className="text-sm opacity-90 mb-2">Profit Margin</div>
-            <div className="text-2xl font-bold mb-1">{financialData.kpis.profitMargin}%</div>
+            <div className="text-xl sm:text-2xl font-bold mb-1">{financialData.kpis.profitMargin}%</div>
             <div className="text-xs opacity-75">Industry avg: 28%</div>
           </div>
 
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-6 rounded-lg shadow-lg text-white">
+          <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-4 sm:p-6 rounded-lg shadow-lg text-white">
             <div className="text-sm opacity-90 mb-2">Customers</div>
-            <div className="text-2xl font-bold mb-1">{financialData.kpis.customerCount}</div>
+            <div className="text-xl sm:text-2xl font-bold mb-1">{financialData.kpis.customerCount}</div>
             <div className="text-xs opacity-75">↑ 142 this quarter</div>
           </div>
 
-          <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 p-6 rounded-lg shadow-lg text-white">
+          <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 p-4 sm:p-6 rounded-lg shadow-lg text-white">
             <div className="text-sm opacity-90 mb-2">ARPC</div>
-            <div className="text-2xl font-bold mb-1">
+            <div className="text-xl sm:text-2xl font-bold mb-1">
               ${(financialData.kpis.revenue / financialData.kpis.customerCount).toFixed(0)}
             </div>
             <div className="text-xs opacity-75">Avg per customer</div>
@@ -118,9 +118,9 @@ export default function FinancialDashboardProject() {
         </div>
 
         {/* Quarterly Performance */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
               Quarterly Performance
             </h2>
             <div className="flex gap-2">
@@ -140,22 +140,22 @@ export default function FinancialDashboardProject() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-4 sm:p-6 rounded-lg border-l-4 border-blue-500">
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Revenue</div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                 ${(currentQData.revenue / 1000000).toFixed(2)}M
               </div>
             </div>
-            <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
+            <div className="bg-red-50 dark:bg-red-900/20 p-4 sm:p-6 rounded-lg border-l-4 border-red-500">
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Expenses</div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                 ${(currentQData.expenses / 1000000).toFixed(2)}M
               </div>
             </div>
-            <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-500">
+            <div className="bg-green-50 dark:bg-green-900/20 p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Profit</div>
-              <div className="text-3xl font-bold text-gray-900 dark:text-white">
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                 ${(currentQData.profit / 1000).toFixed(0)}K
               </div>
             </div>
@@ -208,8 +208,8 @@ export default function FinancialDashboardProject() {
         {/* Expense Breakdown & Revenue by Product */}
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Expense Breakdown */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Expense Breakdown
             </h2>
             <div className="space-y-4">
@@ -251,8 +251,8 @@ export default function FinancialDashboardProject() {
           </div>
 
           {/* Revenue by Product */}
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Revenue by Product
             </h2>
             <div className="space-y-4">
@@ -302,8 +302,8 @@ export default function FinancialDashboardProject() {
         </div>
 
         {/* Cash Flow Analysis */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Cash Flow Analysis
           </h2>
           <div className="grid md:grid-cols-4 gap-6">
@@ -311,7 +311,7 @@ export default function FinancialDashboardProject() {
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                 Operating Activities
               </div>
-              <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+              <div className="text-xl sm:text-2xl font-bold text-green-600 dark:text-green-400">
                 +${(financialData.cashFlow.operating / 1000).toFixed(0)}K
               </div>
             </div>
@@ -319,7 +319,7 @@ export default function FinancialDashboardProject() {
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                 Investing Activities
               </div>
-              <div className="text-2xl font-bold text-red-600 dark:text-red-400">
+              <div className="text-xl sm:text-2xl font-bold text-red-600 dark:text-red-400">
                 ${(financialData.cashFlow.investing / 1000).toFixed(0)}K
               </div>
             </div>
@@ -327,7 +327,7 @@ export default function FinancialDashboardProject() {
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                 Financing Activities
               </div>
-              <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+              <div className="text-xl sm:text-2xl font-bold text-orange-600 dark:text-orange-400">
                 ${(financialData.cashFlow.financing / 1000).toFixed(0)}K
               </div>
             </div>
@@ -335,7 +335,7 @@ export default function FinancialDashboardProject() {
               <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                 Net Cash Flow
               </div>
-              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+              <div className="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">
                 +${(financialData.cashFlow.netCashFlow / 1000).toFixed(0)}K
               </div>
             </div>
@@ -343,11 +343,11 @@ export default function FinancialDashboardProject() {
         </div>
 
         {/* Financial Health Indicators */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             📊 Financial Health Indicators
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="border-l-4 border-green-500 pl-4 bg-green-50 dark:bg-green-900/20 p-4 rounded-r-lg">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                 ✓ Strong Profit Margin
@@ -378,12 +378,12 @@ export default function FinancialDashboardProject() {
         </div>
 
         {/* Strategic Recommendations */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             🎯 Strategic Recommendations
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6">
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 <span className="text-2xl">📈</span>
@@ -427,7 +427,7 @@ export default function FinancialDashboardProject() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg">
             <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
               💡 Projected Impact (Next Quarter)
             </h3>
@@ -459,19 +459,19 @@ export default function FinancialDashboardProject() {
           <div className="mt-8 flex gap-4 flex-wrap">
             <Link
               href="/tools/statistics"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Calculate Metrics
             </Link>
             <Link
               href="/tools/chart-builder"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Visualize Data
             </Link>
             <Link
               href="/projects"
-              className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-gray-600 hover:bg-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Back to Projects
             </Link>

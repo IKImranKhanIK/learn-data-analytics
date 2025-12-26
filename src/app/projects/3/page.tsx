@@ -45,8 +45,8 @@ export default function WebTrafficProject() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
-        <div className="mb-8">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-6xl">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/projects"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
@@ -61,21 +61,21 @@ export default function WebTrafficProject() {
               Project 3
             </span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Website Traffic Analysis
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
             Analyze web analytics to understand user behavior and optimize conversion rates
           </p>
         </div>
 
         {/* Overview Cards */}
         <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md">
             <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               Total Visitors
             </div>
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
+            <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
               {trafficData.overview.totalVisitors.toLocaleString()}
             </div>
             <div className="text-xs text-green-600 dark:text-green-400">
@@ -83,11 +83,11 @@ export default function WebTrafficProject() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md">
             <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               Page Views
             </div>
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
+            <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
               {trafficData.overview.pageViews.toLocaleString()}
             </div>
             <div className="text-xs text-green-600 dark:text-green-400">
@@ -95,11 +95,11 @@ export default function WebTrafficProject() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md">
             <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               Avg Session Duration
             </div>
-            <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">
+            <div className="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">
               {trafficData.overview.avgSessionDuration}
             </div>
             <div className="text-xs text-green-600 dark:text-green-400">
@@ -107,11 +107,11 @@ export default function WebTrafficProject() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md">
             <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
               Bounce Rate
             </div>
-            <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">
+            <div className="text-2xl sm:text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">
               {trafficData.overview.bounceRate}%
             </div>
             <div className="text-xs text-green-600 dark:text-green-400">
@@ -121,8 +121,8 @@ export default function WebTrafficProject() {
         </div>
 
         {/* Traffic Sources */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Traffic Sources
           </h2>
           <div className="space-y-4">
@@ -148,8 +148,8 @@ export default function WebTrafficProject() {
         </div>
 
         {/* Top Pages */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Top Performing Pages
           </h2>
           <div className="overflow-x-auto">
@@ -203,11 +203,11 @@ export default function WebTrafficProject() {
         </div>
 
         {/* Device Breakdown */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Device Breakdown
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {trafficData.deviceBreakdown.map((device) => (
               <div
                 key={device.device}
@@ -216,7 +216,7 @@ export default function WebTrafficProject() {
                 <div className="text-4xl mb-3">
                   {device.device === "Mobile" ? "📱" : device.device === "Desktop" ? "💻" : "📲"}
                 </div>
-                <div className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                   {device.percentage}%
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">
@@ -231,8 +231,8 @@ export default function WebTrafficProject() {
         </div>
 
         {/* Conversion Funnel */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Conversion Funnel
           </h2>
           <div className="space-y-4">
@@ -297,7 +297,7 @@ export default function WebTrafficProject() {
               <span className="font-semibold text-gray-900 dark:text-white">
                 Overall Conversion Rate
               </span>
-              <span className="text-2xl font-bold text-green-600 dark:text-green-400">
+              <span className="text-xl sm:text-2xl font-bold text-green-600 dark:text-green-400">
                 {conversionRate}%
               </span>
             </div>
@@ -305,8 +305,8 @@ export default function WebTrafficProject() {
         </div>
 
         {/* Key Insights */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             📊 Key Insights
           </h2>
           <div className="space-y-4">
@@ -353,12 +353,12 @@ export default function WebTrafficProject() {
         </div>
 
         {/* Recommendations */}
-        <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-8 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             💡 Action Items
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 <span className="text-2xl">🎯</span>
                 Immediate Actions
@@ -371,7 +371,7 @@ export default function WebTrafficProject() {
               </ul>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+            <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg">
               <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 <span className="text-2xl">📈</span>
                 Growth Opportunities
@@ -388,19 +388,19 @@ export default function WebTrafficProject() {
           <div className="mt-8 flex gap-4 flex-wrap">
             <Link
               href="/tools/data-explorer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Analyze More Data
             </Link>
             <Link
               href="/tools/chart-builder"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Create Custom Charts
             </Link>
             <Link
               href="/projects"
-              className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-gray-600 hover:bg-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Back to Projects
             </Link>

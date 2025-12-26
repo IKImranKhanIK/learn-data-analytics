@@ -41,27 +41,27 @@ const tools = [
 export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16">
-        <div className="mb-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
+        <div className="mb-8 sm:mb-12">
           <Link
             href="/"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Interactive Tools
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
             Practice your data analytics skills with interactive tools
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-5xl">
           {tools.map((tool) => (
             <div
               key={tool.id}
-              className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="text-5xl mb-4">{tool.icon}</div>
               <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">

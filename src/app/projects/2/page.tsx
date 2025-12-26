@@ -114,8 +114,8 @@ export default function CustomerSegmentationProject() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
-        <div className="mb-8">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-6xl">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/projects"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
@@ -130,18 +130,18 @@ export default function CustomerSegmentationProject() {
               Project 2
             </span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Customer Segmentation Analysis
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
             Group customers by behavior and demographics to create targeted marketing
             strategies
           </p>
         </div>
 
         {/* Overview */}
-        <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-8 rounded-lg shadow-md mb-8 border-l-4 border-purple-500">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8 border-l-4 border-purple-500">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3">
             📋 Business Context
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -154,7 +154,7 @@ export default function CustomerSegmentationProject() {
               <div className="text-gray-600 dark:text-gray-400 mb-1">
                 Total Customers
               </div>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
+              <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                 {totalCustomers.toLocaleString()}
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function CustomerSegmentationProject() {
               <div className="text-gray-600 dark:text-gray-400 mb-1">
                 Total Revenue
               </div>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
+              <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                 ${(totalRevenue / 1000000).toFixed(1)}M
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function CustomerSegmentationProject() {
               <div className="text-gray-600 dark:text-gray-400 mb-1">
                 Segments
               </div>
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
+              <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                 5 Groups
               </div>
             </div>
@@ -178,12 +178,12 @@ export default function CustomerSegmentationProject() {
         </div>
 
         {/* Segmentation Overview */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Customer Segments
           </h2>
 
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
               Distribution by Segment
             </h3>
@@ -215,7 +215,7 @@ export default function CustomerSegmentationProject() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {segments.slice(0, 3).map((segment) => (
               <div
                 key={segment.id}
@@ -258,7 +258,7 @@ export default function CustomerSegmentationProject() {
 
         {/* Detailed Segment View */}
         {selectedSegment && (
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg mb-8 border-2 border-blue-500">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg mb-8 border-2 border-blue-500">
             {(() => {
               const segment = segments.find((s) => s.id === selectedSegment)!;
               return (
@@ -266,7 +266,7 @@ export default function CustomerSegmentationProject() {
                   <div className="flex justify-between items-start mb-6">
                     <div className="flex items-center gap-3">
                       <div className={`w-6 h-6 ${segment.color} rounded-full`}></div>
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                         {segment.name}
                       </h2>
                     </div>
@@ -352,8 +352,8 @@ export default function CustomerSegmentationProject() {
         )}
 
         {/* Key Insights */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
             🎯 Strategic Insights
           </h2>
 
@@ -391,8 +391,8 @@ export default function CustomerSegmentationProject() {
         </div>
 
         {/* Action Plan */}
-        <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 p-8 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
             📋 Recommended Action Plan
           </h2>
           <div className="space-y-4">
@@ -440,19 +440,19 @@ export default function CustomerSegmentationProject() {
           <div className="mt-8 flex gap-4 flex-wrap">
             <Link
               href="/tools/data-explorer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Explore Customer Data
             </Link>
             <Link
               href="/tools/chart-builder"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Visualize Segments
             </Link>
             <Link
               href="/projects"
-              className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-md transition-colors"
+              className="bg-gray-600 hover:bg-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
             >
               Back to Projects
             </Link>

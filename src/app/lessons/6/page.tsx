@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function DataVisualizationLesson() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <div className="mb-8">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-4xl">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/lessons"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
@@ -19,17 +19,17 @@ export default function DataVisualizationLesson() {
               40 min read
             </span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Data Visualization Basics
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
             Learn to create effective charts and graphs that communicate insights clearly
           </p>
         </div>
 
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-8 rounded-lg shadow-md mb-8 border-l-4 border-purple-500">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8 border-l-4 border-purple-500">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               "A Picture is Worth a Thousand Numbers"
             </h2>
             <p className="text-gray-700 dark:text-gray-300 text-lg">
@@ -39,11 +39,11 @@ export default function DataVisualizationLesson() {
             </p>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Why Visualize Data?
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-3">
                 <div className="flex items-start gap-2">
                   <span className="text-2xl">👁️</span>
@@ -95,7 +95,7 @@ export default function DataVisualizationLesson() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Common Chart Types & When to Use Them
             </h2>
@@ -237,7 +237,7 @@ export default function DataVisualizationLesson() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Design Principles for Effective Visualizations
             </h2>
@@ -306,7 +306,7 @@ export default function DataVisualizationLesson() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Common Mistakes to Avoid
             </h2>
@@ -377,7 +377,7 @@ export default function DataVisualizationLesson() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Quick Reference: Choosing the Right Chart
             </h2>
@@ -447,8 +447,8 @@ export default function DataVisualizationLesson() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-lg shadow-md mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               💡 Key Takeaways
             </h2>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
@@ -487,7 +487,7 @@ export default function DataVisualizationLesson() {
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               🎉 Congratulations!
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
@@ -498,25 +498,25 @@ export default function DataVisualizationLesson() {
             <div className="flex gap-4 flex-wrap">
               <Link
                 href="/lessons/5"
-                className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-md transition-colors"
+                className="bg-gray-500 hover:bg-gray-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
               >
                 ← Previous: Statistics
               </Link>
               <Link
                 href="/tools/chart-builder"
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
+                className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
               >
                 Build Charts Now!
               </Link>
               <Link
                 href="/projects"
-                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md transition-colors"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
               >
                 Start a Project
               </Link>
               <Link
                 href="/lessons"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
               >
                 Back to Lessons
               </Link>

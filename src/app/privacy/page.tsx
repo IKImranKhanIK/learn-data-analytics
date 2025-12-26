@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-4xl">
         <div className="mb-8">
           <Link
             href="/"
@@ -11,7 +11,7 @@ export default function PrivacyPage() {
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Privacy Policy
           </h1>
           <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md space-y-6">
+        <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md space-y-6">
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
               1. Introduction

@@ -42,18 +42,18 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16">
-        <div className="mb-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
+        <div className="mb-8 sm:mb-12">
           <Link
             href="/"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Real-World Projects
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
             Apply your skills with hands-on projects using real datasets
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex justify-between items-start mb-3">
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">

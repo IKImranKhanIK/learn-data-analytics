@@ -367,7 +367,7 @@ console.log(\`Minimum Sale: $\${minSales}\`);
           >
             ← Back to Tools
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2">
             Code Playground
           </h1>
           <p className="text-gray-600 dark:text-gray-300">
@@ -403,7 +403,7 @@ console.log(\`Minimum Sale: $\${minSales}\`);
               {selectedExercise && (
                 <button
                   onClick={resetToDefault}
-                  className="w-full mt-4 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-colors"
+                  className="w-full mt-4 bg-gray-600 hover:bg-gray-700 text-white px-3 sm:px-4 py-2 rounded-md transition-colors"
                 >
                   Reset to Playground
                 </button>
@@ -430,7 +430,7 @@ console.log(\`Minimum Sale: $\${minSales}\`);
                 <div className="flex gap-2">
                   <button
                     onClick={() => setLanguage("python")}
-                    className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                    className={`px-3 sm:px-4 py-2 rounded-md font-medium transition-colors ${
                       language === "python"
                         ? "bg-blue-600 text-white"
                         : "bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
@@ -440,7 +440,7 @@ console.log(\`Minimum Sale: $\${minSales}\`);
                   </button>
                   <button
                     onClick={() => setLanguage("sql")}
-                    className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                    className={`px-3 sm:px-4 py-2 rounded-md font-medium transition-colors ${
                       language === "sql"
                         ? "bg-blue-600 text-white"
                         : "bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
@@ -450,7 +450,7 @@ console.log(\`Minimum Sale: $\${minSales}\`);
                   </button>
                   <button
                     onClick={() => setLanguage("javascript")}
-                    className={`px-4 py-2 rounded-md font-medium transition-colors ${
+                    className={`px-3 sm:px-4 py-2 rounded-md font-medium transition-colors ${
                       language === "javascript"
                         ? "bg-blue-600 text-white"
                         : "bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500"
@@ -470,7 +470,7 @@ console.log(\`Minimum Sale: $\${minSales}\`);
                           setCode(selectedExercise.starterCode);
                         }
                       }}
-                      className="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded-md transition-colors"
+                      className="bg-yellow-600 hover:bg-yellow-700 text-white px-3 sm:px-4 py-2 rounded-md transition-colors"
                     >
                       {showSolution ? "Hide" : "Show"} Solution
                     </button>

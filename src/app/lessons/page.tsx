@@ -58,54 +58,54 @@ const lessons = [
 export default function LessonsPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16">
-        <div className="mb-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
+        <div className="mb-8 sm:mb-12">
           <Link
             href="/"
-            className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
+            className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block text-sm sm:text-base"
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Lessons
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
             Start your journey into data analytics with our structured lessons
           </p>
         </div>
 
-        <div className="grid gap-6 max-w-4xl">
+        <div className="grid gap-4 sm:gap-6 max-w-4xl">
           {lessons.map((lesson) => (
             <div
               key={lesson.id}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
-              <div className="flex justify-between items-start mb-3">
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <div className="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-0 mb-3">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
                   {lesson.title}
                 </h2>
-                <span className="text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">
+                <span className="text-xs sm:text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full whitespace-nowrap">
                   {lesson.level}
                 </span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
                 {lesson.description}
               </p>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-500 dark:text-gray-400">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
+                <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                   {lesson.duration}
                 </span>
                 {lesson.href ? (
                   <Link
                     href={lesson.href}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors text-sm sm:text-base w-full sm:w-auto text-center"
                   >
                     Start Lesson
                   </Link>
                 ) : (
                   <button
                     disabled
-                    className="bg-gray-400 text-white px-4 py-2 rounded-md cursor-not-allowed"
+                    className="bg-gray-400 text-white px-4 py-2 rounded-md cursor-not-allowed text-sm sm:text-base w-full sm:w-auto"
                   >
                     Coming Soon
                   </button>

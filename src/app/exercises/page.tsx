@@ -95,18 +95,18 @@ const exercises: Exercise[] = [
 export default function ExercisesPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16">
-        <div className="mb-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
+        <div className="mb-8 sm:mb-12">
           <Link
             href="/"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Coding Exercises
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-6">
             Practice coding challenges for data analytics
           </p>
 
@@ -225,7 +225,7 @@ export default function ExercisesPage() {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             💡 How to Practice Effectively
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                 <span className="text-2xl">1️⃣</span>

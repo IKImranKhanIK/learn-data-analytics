@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function DataTypesLesson() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <div className="mb-8">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16 max-w-4xl">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/lessons"
             className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
@@ -19,18 +19,18 @@ export default function DataTypesLesson() {
               20 min read
             </span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Understanding Data Types
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300">
             Learn about different types of data and how to work with them
             effectively
           </p>
         </div>
 
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Why Data Types Matter
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -46,7 +46,7 @@ export default function DataTypesLesson() {
             </p>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Main Categories of Data
             </h2>
@@ -132,7 +132,7 @@ export default function DataTypesLesson() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Quick Reference Guide
             </h2>
@@ -177,12 +177,12 @@ export default function DataTypesLesson() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Choosing the Right Analysis
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-purple-50 dark:bg-purple-900/20 p-4 sm:p-6 rounded-lg">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
                   For Quantitative Data
                 </h3>
@@ -195,7 +195,7 @@ export default function DataTypesLesson() {
                 </ul>
               </div>
 
-              <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-lg">
+              <div className="bg-orange-50 dark:bg-orange-900/20 p-4 sm:p-6 rounded-lg">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
                   For Qualitative Data
                 </h3>
@@ -210,7 +210,7 @@ export default function DataTypesLesson() {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mb-8">
+          <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Common Mistakes to Avoid
             </h2>
@@ -249,8 +249,8 @@ export default function DataTypesLesson() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-lg shadow-md mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 sm:p-6 lg:p-8 rounded-lg shadow-md mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               💡 Key Takeaways
             </h2>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
@@ -293,7 +293,7 @@ export default function DataTypesLesson() {
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               Practice Exercise
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -321,23 +321,23 @@ export default function DataTypesLesson() {
           </div>
 
           <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md mt-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
               What's Next?
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               Now that you understand data types, you're ready to learn about
               collecting data from various sources.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="/lessons/1"
-                className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-md transition-colors"
+                className="bg-gray-500 hover:bg-gray-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
               >
                 ← Previous: Introduction
               </Link>
               <Link
                 href="/lessons"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md transition-colors"
               >
                 Back to Lessons
               </Link>
