@@ -4811,13 +4811,33 @@ export default function GuidedProjectPage() {
                       </div>
                     }
                     onMount={() => {
-                      // Suppress Monaco Editor's "Canceled" errors
+                      // Suppress Monaco Editor's development-mode errors
                       const originalError = console.error;
                       console.error = (...args) => {
-                        if (args[0]?.includes?.('Canceled') || args[0]?.message?.includes?.('Canceled')) {
+                        const errorStr = String(args[0] || '');
+                        // Suppress Monaco's error stack parser warnings
+                        if (
+                          errorStr.includes('Canceled') ||
+                          errorStr.includes('stackframe') ||
+                          errorStr.includes('error-stack-parser') ||
+                          errorStr.includes('Duplicate definition of module')
+                        ) {
                           return;
                         }
                         originalError(...args);
+                      };
+
+                      // Also suppress console.warn for Monaco module warnings
+                      const originalWarn = console.warn;
+                      console.warn = (...args) => {
+                        const warnStr = String(args[0] || '');
+                        if (
+                          warnStr.includes('error-stack-parser') ||
+                          warnStr.includes('Duplicate definition')
+                        ) {
+                          return;
+                        }
+                        originalWarn(...args);
                       };
                     }}
                   />
